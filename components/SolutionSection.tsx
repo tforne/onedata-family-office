@@ -60,24 +60,20 @@ export default function SolutionSection() {
                 </div>
               ))}
             </div>
-          </div>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a
-              href="/solutions/property-management/index.html"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
-            >
-              Ver módulo Property Management
-            </a>
-            <a
-              href="/solutions/property-management/index.html"
-              target="_blank"
-              rel="noreferrer"
-              className="text-sm font-medium text-slate-200 transition hover:text-white"
-            >
-              Abrir landing HTML estática
-            </a>
+            <div className="mt-8 flex items-center justify-between gap-4 rounded-[24px] border border-white/10 bg-slate-950/70 px-4 py-4 text-sm text-slate-300 shadow-lg shadow-black/20">
+              <div>
+                <div className="font-semibold text-white">Property Management</div>
+                <div className="mt-1 text-xs text-slate-400">Módulo integrado en el mapa patrimonial</div>
+              </div>
+              <a
+                href="/solutions/property-management/index.html"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
+              >
+                Ver módulo
+              </a>
+            </div>
           </div>
         </div>
       </div>
