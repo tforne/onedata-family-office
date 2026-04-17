@@ -13,7 +13,7 @@ export default function BaseSolutionPage() {
             </div>
             <nav className="flex flex-wrap gap-2 text-sm text-slate-600">
               <a href="#capabilities" className="rounded-full px-4 py-2 hover:bg-slate-100">Capacidades</a>
-              <a href="#benefits" className="rounded-full px-4 py-2 hover:bg-slate-100">Beneficios</a>
+              <a href="#benefits" className="rounded-full px-4 py-2 hover:bg-slate-100">Resultados</a>
               <a href="#tools" className="rounded-full px-4 py-2 hover:bg-slate-100">Herramientas</a>
               <a href="#irpf" className="rounded-full px-4 py-2 hover:bg-slate-100">IRPF</a>
               <a href="#config" className="rounded-full px-4 py-2 hover:bg-slate-100">Configuración</a>
@@ -104,6 +104,56 @@ export default function BaseSolutionPage() {
                 <p className="mt-4 text-slate-700">Integra datos fiscales y financieros en flujos de trabajo más rápidos y coherentes.</p>
               </article>
             </div>
+          </div>
+        </section>
+
+        <section className="py-16" id="benefits">
+          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">Resultados</p>
+              <h2 className="mt-4 text-3xl font-semibold text-slate-950">Impacto operativo desde los primeros ciclos fiscales</h2>
+              <p className="mt-4 text-lg leading-8 text-slate-700">
+                One Data Fiscal permite pasar de una gestión fiscal manual y dispersa a un modelo controlado, trazable y preparado para auditoría dentro de Business Central.
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">Tiempo administrativo</p>
+                <h3 className="mt-4 text-3xl font-semibold text-slate-950">Menos carga manual</h3>
+                <p className="mt-4 text-slate-700 leading-7">La importación de movimientos, facturas y nóminas reduce tareas repetitivas y libera al equipo financiero para revisar excepciones.</p>
+              </article>
+              <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">Calidad del dato</p>
+                <h3 className="mt-4 text-3xl font-semibold text-slate-950">Más precisión</h3>
+                <p className="mt-4 text-slate-700 leading-7">Las validaciones previas ayudan a detectar incoherencias antes de registrar documentos o consolidar declaraciones.</p>
+              </article>
+              <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">Cierre fiscal</p>
+                <h3 className="mt-4 text-3xl font-semibold text-slate-950">Procesos más ágiles</h3>
+                <p className="mt-4 text-slate-700 leading-7">La información fiscal queda alineada con compras, ventas y contabilidad para acelerar cierres mensuales, trimestrales y anuales.</p>
+              </article>
+              <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">Cumplimiento</p>
+                <h3 className="mt-4 text-3xl font-semibold text-slate-950">Control normativo</h3>
+                <p className="mt-4 text-slate-700 leading-7">Los modelos soportados y la configuración de periodos reducen el riesgo de omisiones, duplicidades o errores de clasificación.</p>
+              </article>
+            </div>
+          </div>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            <article className="rounded-3xl bg-sky-700 p-6 text-white shadow-lg shadow-sky-700/20">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-sky-100">Antes</p>
+              <p className="mt-4 text-lg leading-8 text-sky-50">Ficheros dispersos, ajustes manuales, revisiones tardías y dependencia de conocimiento interno no documentado.</p>
+            </article>
+            <article className="rounded-3xl bg-slate-900 p-6 text-white shadow-lg shadow-slate-900/20">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-300">Durante</p>
+              <p className="mt-4 text-lg leading-8 text-slate-200">Importación guiada, validación de datos, asignación contable y generación de documentos dentro del mismo entorno operativo.</p>
+            </article>
+            <article className="rounded-3xl bg-white p-6 text-slate-950 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-sky-700">Después</p>
+              <p className="mt-4 text-lg leading-8 text-slate-700">Información fiscal trazable, cierres más consistentes y un equipo con más capacidad para análisis, cumplimiento y mejora continua.</p>
+            </article>
           </div>
         </section>
 
