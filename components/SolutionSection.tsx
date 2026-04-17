@@ -63,13 +63,17 @@ export default function SolutionSection() {
           </div>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
-              href="/solutions/property-management"
+              href="/solutions/property-management/index.html"
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
             >
               Ver módulo Property Management
             </a>
             <a
               href="/solutions/property-management/index.html"
+              target="_blank"
+              rel="noreferrer"
               className="text-sm font-medium text-slate-200 transition hover:text-white"
             >
               Abrir landing HTML estática
