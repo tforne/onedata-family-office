@@ -263,8 +263,8 @@ function CapabilityIcon({ title }: { title: string }) {
   };
 
   return (
-    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-sky-200 bg-sky-50 text-sky-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]">
-      <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true">
+    <div className="flex h-12 w-12 items-center justify-center text-slate-950">
+      <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
         {icons[title]}
       </svg>
     </div>
