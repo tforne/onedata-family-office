@@ -2,11 +2,20 @@ import Link from 'next/link';
 
 const solutionCards = [
   {
+    title: 'OneData Base',
+    description:
+      'Capa base de OneData Family Office con gobierno patrimonial, ownership, stakeholders, compliance documental, Copilot y portal del inquilino.',
+    href: '/solutions/base',
+    image: '/solutions/property-management/images/preview.png',
+  },
+  {
     title: 'Property Management',
     description:
       'Landing de OneData Family Office para activos inmobiliarios, contratos, finanzas FRE y seguros dentro de BC.',
     href: '/solutions/property-management',
     image: '/solutions/property-management/images/preview.png',
+    secondaryHref: '/solutions/property-management/index.html',
+    secondaryLabel: 'Abrir HTML estático',
   },
 ];
 
@@ -44,12 +53,14 @@ export default function SolutionsPage() {
                 >
                   Ver landing
                 </Link>
-                <a
-                  href="/solutions/property-management/index.html"
-                  className="text-sm font-medium text-slate-600 transition hover:text-slate-900"
-                >
-                  Abrir HTML estático
-                </a>
+                {solution.secondaryHref ? (
+                  <a
+                    href={solution.secondaryHref}
+                    className="text-sm font-medium text-slate-600 transition hover:text-slate-900"
+                  >
+                    {solution.secondaryLabel}
+                  </a>
+                ) : null}
               </div>
             </article>
           ))}
