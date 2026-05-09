@@ -145,29 +145,6 @@ const integrations = [
   'APIs para el portal del inquilino.',
 ];
 
-const setupSteps = [
-  'Publicar la extension.',
-  'Asignar el permiso `OD FO ADMIN`.',
-  'Configurar el setup de Family Office y las series.',
-  'Configurar familias, entidades y ownership.',
-  'Definir setup documental, tipos y requisitos.',
-  'Configurar sync setups para stakeholders si aplica.',
-  'Configurar endpoint, deployment y API key de Copilot si se usara IA.',
-  'Configurar usuarios y reglas del portal si se habilita acceso externo.',
-];
-
-const quickStart = [
-  'Crear una familia y anadir miembros.',
-  'Crear entidades legales y vincular activos.',
-  'Definir ownership y roles de gobierno.',
-  'Crear stakeholders y relacionarlos con registros operativos.',
-  'Definir tipos documentales y reglas de obligatoriedad.',
-  'Adjuntar y clasificar documentos clave.',
-  'Revisar cues de vencimientos y faltas de compliance.',
-  'Ejecutar analisis Copilot para generar insights y acciones.',
-  'Publicar documentos y exponer informacion al portal cuando aplique.',
-];
-
 const roadmap = [
   'Consolidacion financiera global.',
   'Dashboards avanzados en Power BI.',
@@ -180,16 +157,119 @@ const roadmap = [
 
 const staticLinks = [
   {
-    title: 'Landing Property Management',
-    href: '/solutions/property-management',
-    description: 'Vista integrada dentro de Next.js para la landing de Property Management.',
-  },
-  {
-    title: 'HTML estatico',
+    title: 'OneData Property Management',
     href: '/solutions/property-management/index.html',
     description: 'Version estatica original servida desde `public/solutions/property-management`.',
   },
+  {
+    title: 'OneData Base',
+    href: '/solutions/base',
+    description: 'Acceso a la landing de OneData Base con foco en gestion fiscal e integracion en Business Central.',
+  },
 ];
+
+function CapabilityIcon({ title }: { title: string }) {
+  const icons: Record<string, JSX.Element> = {
+    'Estructura familiar': (
+      <path
+        d="M8 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm8 0a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM4.5 18.5c.6-2.1 2.3-3.5 4.5-3.5s3.9 1.4 4.5 3.5M12.5 18.5c.5-1.6 1.9-2.7 3.5-2.7 1.6 0 3 1.1 3.5 2.7"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.75"
+      />
+    ),
+    'Entidades legales': (
+      <path
+        d="M5.5 19.5h13M7 19.5V9.5m5 10V9.5m5 10V9.5M4.5 9.5h15L12 5 4.5 9.5Z"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.75"
+      />
+    ),
+    Ownership: (
+      <path
+        d="M12 5.5 6.5 8.5v4.2c0 3.2 2.2 5.5 5.5 6.8 3.3-1.3 5.5-3.6 5.5-6.8V8.5L12 5.5Zm0 4v4"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.75"
+      />
+    ),
+    'Modelo activo-compania': (
+      <path
+        d="M7 7.5h4v4H7Zm6 5h4v4h-4Zm-6 1h4m2-4h4"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.75"
+      />
+    ),
+    'Gobierno y responsabilidades': (
+      <path
+        d="M12 5.5v4m0 0 4 2m-4-2-4 2m-1 6h10M8.5 17.5V15m7 2.5V15"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.75"
+      />
+    ),
+    'Stakeholders globales': (
+      <path
+        d="M12 6.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Zm-5 10c.6-1.8 2.5-3 5-3s4.4 1.2 5 3M5 9.5h1.5M17.5 9.5H19"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.75"
+      />
+    ),
+    'Compliance documental': (
+      <path
+        d="M8 5.5h6l3 3v10H8v-13Zm6 0v3h3M10 13l1.4 1.4 3.6-3.6"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.75"
+      />
+    ),
+    'Copilot de activos': (
+      <path
+        d="M12 5.5 13.5 9l3.5.3-2.7 2.4.8 3.5-3.1-1.9-3.1 1.9.8-3.5-2.7-2.4 3.5-.3L12 5.5Z"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.75"
+      />
+    ),
+    'Portal del inquilino': (
+      <path
+        d="M7.5 7.5h9a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-9a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1Zm2 10h5m-2.5-3.5V11"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.75"
+      />
+    ),
+  };
+
+  return (
+    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-sky-200 bg-sky-50 text-sky-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]">
+      <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true">
+        {icons[title]}
+      </svg>
+    </div>
+  );
+}
 
 export default function SolutionsPage() {
   return (
@@ -238,7 +318,8 @@ export default function SolutionsPage() {
                 Concepto base
               </p>
               <h2 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl">
-                Property Management ejecuta la operativa. Family Office controla la propiedad y la toma de decisiones.
+                OneData Family Office aporta gobierno patrimonial, ownership global y control para una mejor toma de
+                decisiones.
               </h2>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
                 OneData Family Office es una extension para Microsoft Dynamics 365 Business Central que incorpora una
@@ -257,25 +338,33 @@ export default function SolutionsPage() {
 
             <div className="rounded-[28px] border border-white/10 bg-white/5 p-6">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-300">Arquitectura</p>
-              <pre className="mt-6 overflow-x-auto rounded-3xl bg-slate-900 p-6 text-sm leading-7 text-slate-200">
-                {`┌────────────────────────────────────┐
-│        FAMILY OFFICE               │
-│  Gobierno • Ownership • Control    │
-└───────────────┬────────────────────┘
-                │
-┌───────────────▼────────────────────┐
-│   PROPERTY MANAGEMENT              │
-│   Contratos • Incidencias • Ledger │
-└───────────────┬────────────────────┘
-                │
-┌───────────────▼────────────────────┐
-│           ACTIVOS                  │
-│     Core de Inmuebles y Patrimonio │
-└────────────────────────────────────┘`}
-              </pre>
-              <div className="mt-6 rounded-3xl border border-cyan-400/20 bg-cyan-400/10 p-5 text-sm leading-7 text-cyan-50">
-                Las tablas globales se apoyan en `DataPerCompany = false;` para centralizar la vision patrimonial y
-                documental por encima de la segmentacion por compania.
+              <div className="mt-6 rounded-3xl bg-slate-900 p-6">
+                <div className="mx-auto flex max-w-md flex-col items-center font-mono text-base text-slate-200">
+                  <div className="w-full rounded-[20px] border border-slate-200 px-6 py-5 text-center shadow-[inset_0_0_0_1px_rgba(255,255,255,0.02)]">
+                    <p className="text-lg font-semibold tracking-[0.14em] text-white">FAMILY OFFICE</p>
+                    <p className="mt-3 text-[1.02rem] leading-7 text-slate-300">Gobierno • Ownership • Control</p>
+                  </div>
+
+                  <div className="flex h-14 flex-col items-center justify-center">
+                    <div className="h-8 w-px bg-slate-200" />
+                    <div className="h-0 w-0 border-x-[6px] border-t-[8px] border-x-transparent border-t-slate-200" />
+                  </div>
+
+                  <div className="w-full rounded-[20px] border border-slate-200 px-6 py-5 text-center shadow-[inset_0_0_0_1px_rgba(255,255,255,0.02)]">
+                    <p className="text-lg font-semibold tracking-[0.11em] text-white">PROPERTY MANAGEMENT</p>
+                    <p className="mt-3 text-[1.02rem] leading-7 text-slate-300">Contratos • Incidencias • Ledger</p>
+                  </div>
+
+                  <div className="flex h-14 flex-col items-center justify-center">
+                    <div className="h-8 w-px bg-slate-200" />
+                    <div className="h-0 w-0 border-x-[6px] border-t-[8px] border-x-transparent border-t-slate-200" />
+                  </div>
+
+                  <div className="w-full rounded-[20px] border border-slate-200 px-6 py-5 text-center shadow-[inset_0_0_0_1px_rgba(255,255,255,0.02)]">
+                    <p className="text-lg font-semibold tracking-[0.14em] text-white">ACTIVOS</p>
+                    <p className="mt-3 text-[1.02rem] leading-7 text-slate-300">Core de Inmuebles y Patrimonio</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -299,7 +388,12 @@ export default function SolutionsPage() {
                 key={capability.title}
                 className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.06)]"
               >
-                <h3 className="text-xl font-semibold text-slate-950">{capability.title}</h3>
+                <div className="flex items-start gap-4">
+                  <CapabilityIcon title={capability.title} />
+                  <div>
+                    <h3 className="text-xl font-semibold text-slate-950">{capability.title}</h3>
+                  </div>
+                </div>
                 <ul className="mt-5 space-y-3 text-sm leading-7 text-slate-700">
                   {capability.points.map((point) => (
                     <li key={point}>{point}</li>
@@ -369,40 +463,62 @@ export default function SolutionsPage() {
         </section>
 
         <section className="rounded-[32px] bg-slate-950 px-8 py-16 text-white" id="setup">
-          <div className="grid gap-10 lg:grid-cols-2">
+          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Instalacion</p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+              <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
                 Requisitos y puesta en marcha rapida
               </h2>
-              <div className="mt-6 rounded-3xl border border-white/10 bg-white/5 p-6">
-                <p className="font-semibold text-white">Requisitos</p>
-                <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-300">
-                  <li>Microsoft Dynamics 365 Business Central.</li>
-                  <li>OneData Property Management.</li>
-                  <li>Capacidad de adjuntos estandar.</li>
-                  <li>Configuracion de Azure OpenAI para Copilot.</li>
-                  <li>Front-end o app consumidora para las APIs del portal.</li>
-                </ul>
+              <p className="mt-5 max-w-xl text-lg leading-8 text-slate-300">
+                La implantacion se apoya en un stack conocido y en una capa funcional preparada para gobernar
+                estructuras patrimoniales complejas sin romper la operativa existente.
+              </p>
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                <article className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-300">Base operativa</p>
+                  <p className="mt-3 leading-7 text-slate-300">
+                    Business Central y Property Management como plataforma de trabajo sobre la que se eleva Family
+                    Office.
+                  </p>
+                </article>
+                <article className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-300">Capas adicionales</p>
+                  <p className="mt-3 leading-7 text-slate-300">
+                    Documentacion, IA y portal externo para reforzar control, analisis y colaboracion con terceros.
+                  </p>
+                </article>
               </div>
             </div>
 
-            <div className="grid gap-6">
-              <article className="rounded-3xl border border-white/10 bg-white/5 p-6">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-300">Instalacion</p>
-                <ol className="mt-4 space-y-3 text-sm leading-7 text-slate-300">
-                  {setupSteps.map((step) => (
-                    <li key={step}>{step}</li>
-                  ))}
-                </ol>
+            <div className="grid gap-5">
+              <article className="rounded-[28px] border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.18)]">
+                <p className="text-lg font-semibold text-white">Requisitos</p>
+                <ul className="mt-5 grid gap-3 text-sm leading-7 text-slate-300">
+                  <li className="rounded-2xl border border-white/10 bg-slate-900/40 px-4 py-3">
+                    Microsoft Dynamics 365 Business Central.
+                  </li>
+                  <li className="rounded-2xl border border-white/10 bg-slate-900/40 px-4 py-3">
+                    OneData Property Management.
+                  </li>
+                  <li className="rounded-2xl border border-white/10 bg-slate-900/40 px-4 py-3">
+                    Capacidad de adjuntos estandar.
+                  </li>
+                  <li className="rounded-2xl border border-white/10 bg-slate-900/40 px-4 py-3">
+                    Configuracion de Azure OpenAI para Copilot.
+                  </li>
+                  <li className="rounded-2xl border border-white/10 bg-slate-900/40 px-4 py-3">
+                    Front-end o app consumidora para las APIs del portal.
+                  </li>
+                </ul>
               </article>
-              <article className="rounded-3xl border border-white/10 bg-white/5 p-6">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-300">Quick start</p>
-                <ol className="mt-4 space-y-3 text-sm leading-7 text-slate-300">
-                  {quickStart.map((step) => (
-                    <li key={step}>{step}</li>
-                  ))}
-                </ol>
+
+              <article className="rounded-[28px] border border-cyan-400/20 bg-cyan-400/10 p-6">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-300">Enfoque recomendado</p>
+                <p className="mt-3 leading-7 text-cyan-50">
+                  Empezar por ownership, entidades legales y compliance permite desplegar una primera capa de control
+                  con impacto visible desde el inicio.
+                </p>
               </article>
             </div>
           </div>
@@ -422,6 +538,77 @@ export default function SolutionsPage() {
               ))}
             </div>
           </div>
+        </section>
+
+        <section className="pb-8 pt-4" id="contacto">
+          <div className="overflow-hidden rounded-[32px] bg-[linear-gradient(135deg,_#020617_0%,_#0f172a_55%,_#020617_100%)] p-8 text-white shadow-[0_30px_100px_rgba(15,23,42,0.18)] lg:p-10">
+            <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-100/90">Solicitar demo</p>
+                <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
+                  Solicita una demo centrada en el gobierno real de tu patrimonio.
+                </h2>
+                <p className="mt-6 max-w-2xl text-lg leading-8 text-sky-50/90">
+                  Podemos orientar la demostracion a ownership, entidades legales, compliance documental, control
+                  global de stakeholders y analisis asistido para toma de decisiones.
+                </p>
+              </div>
+
+              <form
+                action="mailto:contacto@onedata.one"
+                method="post"
+                encType="text/plain"
+                className="grid gap-4"
+              >
+                <div className="grid gap-3 sm:grid-cols-3">
+                  <input
+                    type="text"
+                    name="nombre"
+                    placeholder="Nombre"
+                    className="min-h-14 rounded-2xl border border-white/20 bg-white px-4 text-slate-950 outline-none transition placeholder:text-slate-500 focus:border-white focus:ring-2 focus:ring-white/30"
+                  />
+                  <input
+                    type="text"
+                    name="empresa"
+                    placeholder="Empresa"
+                    className="min-h-14 rounded-2xl border border-white/20 bg-white px-4 text-slate-950 outline-none transition placeholder:text-slate-500 focus:border-white focus:ring-2 focus:ring-white/30"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    className="min-h-14 rounded-2xl border border-white/20 bg-white px-4 text-slate-950 outline-none transition placeholder:text-slate-500 focus:border-white focus:ring-2 focus:ring-white/30"
+                  />
+                </div>
+
+                <textarea
+                  name="necesidad"
+                  placeholder="Cuentanos brevemente que necesitas"
+                  rows={5}
+                  className="min-h-[150px] rounded-[24px] border border-white/20 bg-white px-4 py-4 text-slate-950 outline-none transition placeholder:text-slate-500 focus:border-white focus:ring-2 focus:ring-white/30"
+                />
+
+                <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
+                  <button
+                    type="submit"
+                    className="inline-flex min-h-14 items-center justify-center rounded-2xl border border-slate-950 bg-white px-6 text-base font-semibold text-slate-950 transition hover:bg-slate-100"
+                  >
+                    Enviar solicitud
+                  </button>
+                  <a
+                    href="#capabilities"
+                    className="inline-flex min-h-14 items-center justify-center rounded-2xl border border-white/40 bg-transparent px-6 text-base font-semibold text-white transition hover:bg-white/10"
+                  >
+                    Revisar funcionalidades
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <p className="px-2 pt-8 text-center text-sm text-slate-500">
+            © 2026 OneData · Family Office para Microsoft Dynamics 365 Business Central
+          </p>
         </section>
       </main>
     </div>
