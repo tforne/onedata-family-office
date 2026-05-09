@@ -23,14 +23,19 @@
   - [3.2. Resumen de Modelos y Plazos](#32-resumen-de-modelos-y-plazos)
 - [4. Ventas](#4-ventas)
   - [4.1. Configuración OneData Ventas](#41-configuración-onedata-ventas)
-- [5. Configuración](#5-configuración)
-  - [5.1. Configuración Asistida](#51-configuración-asistida)
-  - [5.2. Configuración Avanzada](#52-configuración-avanzada)
-- [6. Licencia](#6-licencia)
-  - [6.1. Cláusula de Privacidad de Código Fuente](#61-cláusula-de-privacidad-de-código-fuente)
-  - [6.2. Propósito](#62-propósito)
-  - [6.3. Implicaciones para los Usuarios](#63-implicaciones-para-los-usuarios)
-  - [6.4. Garantías](#64-garantías)
+- [5. Sincronización Multiempresa](#5-sincronización-multiempresa)
+  - [5.1. ¿Qué es la Sincronización Multiempresa?](#51-qué-es-la-sincronización-multiempresa)
+  - [5.2. Funcionalidades Clave](#52-funcionalidades-clave)
+  - [5.3. Beneficios](#53-beneficios)
+  - [5.4. Configuración y Uso](#54-configuración-y-uso)
+- [6. Configuración](#6-configuración)
+  - [6.1. Configuración Asistida](#61-configuración-asistida)
+  - [6.2. Configuración Avanzada](#62-configuración-avanzada)
+- [7. Licencia](#7-licencia)
+  - [7.1. Cláusula de Privacidad de Código Fuente](#71-cláusula-de-privacidad-de-código-fuente)
+  - [7.2. Propósito](#72-propósito)
+  - [7.3. Implicaciones para los Usuarios](#73-implicaciones-para-los-usuarios)
+  - [7.4. Garantías](#74-garantías)
 
 
 ## 2.1. La Solución integral para la soporte y gestión Fiscal en Microsoft Business Central
@@ -48,6 +53,9 @@ One Data Fiscal es una extensión avanzada diseñada para maximizar la eficienci
 3. Optimización de Procesos Administrativos.
    • Integra datos fiscales y financieros con rapidez y eficacia.
    • Proporciona un flujo de trabajo simplificado para la gestión de información fiscal.
+4. Sincronización Avanzada Multiempresa.
+   • Permite replicar datos entre múltiples empresas en Business Central de manera automática y controlada.
+   • Facilita la gestión de entidades con operaciones interconectadas, asegurando consistencia de datos.
 
 ## 2.3. Beneficios Clave.
 
@@ -57,10 +65,12 @@ Reduce el tiempo dedicado a tareas administrativas repetitivas.
 Minimiza errores humanos, asegurando el cumplimiento normativo.
 • Adaptabilidad Total.
 Se ajusta a las necesidades únicas de tu empresa, independientemente del sector.
+• Integración Multiempresa.
+Mejora la eficiencia en grupos empresariales con múltiples entidades.
 
 ## 2.4. ¿Por qué elegir One Data Fiscal?
 
-Con One Data Fiscal, las empresas pueden optimizar cada aspecto de la gestión fiscal, desde la configuración de estructuras internas hasta la integración de datos financieros. Es la solución ideal para organizaciones que buscan llevar sus operaciones fiscales al siguiente nivel, aprovechando al máximo el potencial de Microsoft Business Central.
+Con One Data Fiscal, las empresas pueden optimizar cada aspecto de la gestión fiscal, desde la configuración de estructuras internas hasta la integración de datos financieros y la sincronización entre empresas. Es la solución ideal para organizaciones que buscan llevar sus operaciones fiscales al siguiente nivel, aprovechando al máximo el potencial de Microsoft Business Central.
 
 ¡Transforma tu manera de gestionar la información fiscal con One Data Fiscal!
 
@@ -238,37 +248,67 @@ Plazo de presentación: 2 de abril al 30 de junio del año siguiente al ejercici
 
 Editar los decretos legales que se aplican a los documentos de ventas y envios.
 
-# 5. Configuración
+# 5. Sincronización Multiempresa
 
-## 5.1. Configuración Asistida
+## 5.1. ¿Qué es la Sincronización Multiempresa?
+
+La Sincronización Multiempresa de OneData es una funcionalidad avanzada que permite replicar datos entre múltiples empresas dentro de un entorno Microsoft Business Central. Utilizando Integration Table Mapping y Field Mapping, junto con RecordRef y FieldRef, esta herramienta facilita la sincronización automática de registros como clientes, proveedores y otros datos críticos entre compañías relacionadas.
+
+## 5.2. Funcionalidades Clave
+
+- **Replicación Automática**: Sincroniza datos en tiempo real o programado entre empresas fuente y destino.
+- **Mapeo Flexible**: Configura mappings personalizados para tablas y campos específicos.
+- **Interfaz Propia OneData**: Gestiona la sincronización a través de páginas dedicadas para configuración y monitoreo.
+- **Registro de Logs**: Mantén un historial detallado de todas las operaciones de sincronización para auditoría y resolución de problemas.
+- **Soporte para Múltiples Empresas**: Maneja configuraciones complejas con múltiples compañías destino.
+
+## 5.3. Beneficios
+
+- **Consistencia de Datos**: Asegura que la información crítica esté actualizada en todas las empresas.
+- **Eficiencia Operativa**: Reduce el trabajo manual y minimiza errores en la replicación de datos.
+- **Escalabilidad**: Ideal para grupos empresariales con operaciones interconectadas.
+- **Cumplimiento**: Facilita el cumplimiento normativo al mantener datos sincronizados.
+
+## 5.4. Configuración y Uso
+
+1. Crear un registro en `OD Sync Setup` con el código, mapping name y table ID.
+2. Habilitar la configuración y añadir empresas destino.
+3. Ejecutar la sincronización manualmente o configurar triggers automáticos.
+4. Monitorear el progreso y logs a través de las páginas de administración.
+
+Ejemplo: Para sincronizar clientes (Tabla 18), configura un setup con Mapping Name 'CUSTOMER-GROUP' y añade las compañías destino.
+
+# 6. Configuración
+
+## 6.1. Configuración Asistida
 Con la extensión instalada, es hora de configurar los parámetros básicos. Para acceder a la configuración de OneData Fiscal, dirígete a la opción correspondiente dentro de la configuración asistida de Microsoft Business Central. Allí, el sistema te guiará a través de un asistente con preguntas clave que debes cumplimentar para adaptar la extensión a las necesidades fiscales de tu empresa. Asegúrate de completar todos los campos requeridos y de revisar las conexiones con los módulos de ventas, compras y contabilidad para garantizar un flujo de datos consistente y preciso.
 
 
 
-## 5.2. Configuración Avanzada
+## 6.2. Configuración Avanzada
 
 Una vez completada la configuración inicial, es momento de personalizar las opciones avanzadas de la extensión. En este apartado podrás ajustar detalles como la configuración de los periodos y el año fiscal aplicable al Impuesto sobre la Renta de las Personas Físicas (IRPF). Además, si tu empresa tiene empleados a cargo, tendrás la posibilidad de definir los grupos de IRPF que correspondan según la estructura y necesidades de tu organización.  
 
 También podrás personalizar la integración con servicios externos, el formato de los documentos fiscales y los periodos de cierre fiscal. Si tu empresa opera en varias localidades o maneja diferentes tipos de productos y servicios, aquí podrás establecer reglas específicas para cada caso. Adicionalmente, tendrás la opción de habilitar notificaciones automáticas que te alerten sobre vencimientos fiscales o cambios en las regulaciones, ayudándote a mantenerte al día en todo momento.
 
 
-# 6. Licencia
+# 7. Licencia
 
-## 6.1. Cláusula de Privacidad de Código Fuente
+## 7.1. Cláusula de Privacidad de Código Fuente
 
 Esta extensión para Microsoft Business Central ha sido desarrollada con el más alto estándar de seguridad para proteger la integridad del código fuente y la información relacionada con su implementación. Con el objetivo de garantizar la seguridad y confidencialidad de nuestro desarrollo, se ha aplicado la configuración de la propiedad allowDownloadingSource en estado False. Esto implica que el código fuente de la extensión no es accesible ni descargable desde el entorno de Business Central.
 
-## 6.2. Propósito
+## 7.2. Propósito
 
 El propósito de esta configuración es evitar el acceso no autorizado al código fuente, proteger los derechos de propiedad intelectual de los desarrolladores y garantizar la estabilidad y el correcto funcionamiento de la solución.
 
-## 6.3. Implicaciones para los Usuarios
+## 7.3. Implicaciones para los Usuarios
 
 1. Acceso Restringido: Los usuarios y administradores del entorno de Business Central no podrán descargar el código fuente de esta extensión desde el cliente ni desde otros métodos estándar de acceso.
 2. Soporte Técnico: El soporte técnico y el mantenimiento de la extensión se llevarán a cabo exclusivamente por el equipo de desarrollo autorizado. En caso de incidencias, el cliente deberá contactar con los desarrolladores o distribuidores oficiales.
 3. Confidencialidad de Datos: La configuración no afecta los datos empresariales gestionados por la extensión, que seguirán siendo propiedad del cliente y estarán protegidos según las políticas de privacidad del entorno de Business Central.
 4. Derechos de Propiedad Intelectual: El código fuente de esta extensión es propiedad exclusiva de OneData.zone. Cualquier intento de ingeniería inversa, acceso no autorizado o manipulación del código constituye una violación de los derechos de propiedad intelectual.
 
-## 6.4. Garantías
+## 7.4. Garantías
 
 Esta extensión cumple con las normativas de seguridad y privacidad aplicables, asegurando la máxima protección contra vulnerabilidades derivadas del acceso no autorizado al código fuente.
