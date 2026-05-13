@@ -113,13 +113,13 @@ const modules = [
     ],
   },
   {
-    title: 'Analisis IA de Activos',
+    title: 'Analisis IA de Activos y de Incidencias',
     description:
-      'El Copilot trabaja sobre datos ya existentes en Business Central y convierte el analisis en evidencia persistida y acciones concretas.',
+      'Una capa de IA que aprovecha la informacion que ya existe en Business Central para ayudarte a entender mejor cada activo y gestionar incidencias con mas criterio, mas rapidez y mas trazabilidad.',
     bullets: [
-      'Analisis de riesgos, descripcion comercial y rentabilidad.',
-      'Contexto contractual, financiero, seguros, incidencias y documentos.',
-      'Scores persistidos y acciones de seguimiento.',
+      'Analiza cada activo para detectar riesgos, entender su rentabilidad y dar mas visibilidad sobre la calidad del dato.',
+      'Revisa peticiones de incidencia con el contexto del activo, el contrato, los seguros, el equipamiento y la documentacion disponible.',
+      'Propone decisiones, acciones de seguimiento y respuestas orientativas, dejando todo guardado en Business Central para su trazabilidad.',
     ],
   },
   {
