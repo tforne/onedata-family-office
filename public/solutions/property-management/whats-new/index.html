@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What's new | OneData Property Management</title>
+  <meta name="description" content="Índice de novedades y registros de cambios de OneData Property Management." />
+  <style>
+    :root { --ink:#132238; --muted:#5f6f82; --line:#d8e1ea; --card:#ffffff; --panel:#f4f8fb; --brand:#0f6cbd; --brand-deep:#0a4f8a; --accent:#dff0ff; --max:1120px; --shadow:0 18px 40px rgba(15,35,56,.08); --radius:22px; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif; color:var(--ink); line-height:1.6; background:linear-gradient(180deg,#eff6fb 0%, #ffffff 28%); }
+    a { color:inherit; text-decoration:none; }
+    .container { width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+    .topbar { position:sticky; top:0; z-index:20; border-bottom:1px solid rgba(216,225,234,.88); background:rgba(255,255,255,.92); backdrop-filter:blur(14px); }
+    .topbar-inner { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:700; }
+    .brand-mark { width:38px; height:38px; border-radius:12px; display:grid; place-items:center; color:#fff; background:linear-gradient(135deg,var(--brand),#4da3e6); }
+    .nav-link, .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 16px; border-radius:999px; font-weight:600; }
+    .nav-link { border:1px solid var(--line); background:#fff; }
+    .hero { padding:62px 0 28px; }
+    .hero-grid { display:grid; grid-template-columns:1.08fr .92fr; gap:24px; align-items:stretch; }
+    .hero-card, .latest-card, .release-card { background:rgba(255,255,255,.94); border:1px solid rgba(216,225,234,.92); border-radius:var(--radius); box-shadow:var(--shadow); }
+    .hero-card { padding:30px; }
+    .eyebrow { display:inline-flex; align-items:center; gap:10px; padding:7px 12px; border-radius:999px; font-size:.84rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--brand); background:var(--accent); }
+    .eyebrow-dot { width:8px; height:8px; border-radius:999px; background:var(--brand); }
+    h1 { margin:16px 0 12px; font-size:clamp(2.5rem,4.8vw,4.5rem); line-height:1.02; letter-spacing:-.04em; }
+    .hero-copy { margin:0; color:#425466; font-size:1.08rem; max-width:700px; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+    .btn-primary { color:#fff; background:var(--brand); }
+    .btn-primary:hover { background:var(--brand-deep); }
+    .btn-secondary { color:var(--ink); background:#fff; border:1px solid var(--line); }
+    .latest-card { padding:26px; background:linear-gradient(180deg,#f7fbff 0%, #ffffff 100%); }
+    .latest-card h2 { margin:10px 0 8px; font-size:1.8rem; letter-spacing:-.03em; }
+    .latest-card p { margin:0 0 18px; color:#425466; }
+    .latest-meta { display:grid; gap:12px; }
+    .latest-meta strong { display:block; font-size:.8rem; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); }
+    .latest-meta span { color:var(--ink); }
+    .section { padding:8px 0 66px; }
+    .section-head { margin:0 0 22px; }
+    .section-head h2 { margin:0 0 8px; font-size:2rem; letter-spacing:-.03em; }
+    .section-head p { margin:0; color:var(--muted); }
+    .release-list { display:grid; gap:18px; }
+    .release-card { padding:24px; }
+    .release-top { display:flex; align-items:flex-start; justify-content:space-between; gap:14px; margin-bottom:12px; }
+    .release-card h2 { margin:12px 0 8px; font-size:1.35rem; letter-spacing:-.02em; }
+    .release-card p { margin:0; color:#425466; }
+    .pill, .meta-pill { display:inline-flex; align-items:center; border-radius:999px; font-weight:600; }
+    .pill { padding:7px 12px; background:#ecf4fb; color:var(--brand); font-size:.9rem; }
+    .meta-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+    .meta-pill { padding:8px 12px; background:#f6f9fc; border:1px solid var(--line); color:#39526b; font-size:.92rem; }
+    .card-link { padding:10px 14px; border-radius:999px; color:#fff; background:var(--brand); font-weight:600; white-space:nowrap; }
+    @media (max-width: 900px) { .hero-grid { grid-template-columns:1fr; } }
+    @media (max-width: 600px) { .container { width:min(var(--max), calc(100% - 24px)); } .topbar-inner, .release-top { align-items:flex-start; flex-direction:column; } .hero-card, .latest-card, .release-card { padding:22px; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="brand-mark">OF</div>
+        <span>OneData Property Management</span>
+      </div>
+      <a class="nav-link" href="../index.html">Volver a la landing</a>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> What's new</div>
+          <h1>Novedades y registro de cambios</h1>
+          <p class="hero-copy">Consulta las versiones publicadas de OneData Property Management con un índice navegable y una página dedicada por cada documento de auditoría.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="v3-0-26141-173.html">Abrir última versión</a>
+            <a class="btn btn-secondary" href="../index.html">Volver a la solución</a>
+          </div>
+        </div>
+        <aside class="latest-card">
+          <div class="eyebrow">Última publicación</div>
+          <h2>3.0.26141.173</h2>
+          <p>Documento de control y trazabilidad de cambios correspondiente a la version 3.0.26141.173. La version incorpora una evolucion relevante sobre la gestion de contratos de arrendamiento, la preparacion de datos para Allocation Account, la mejora de la experiencia de gestion documental en contratos y una nueva base func...</p>
+          <div class="latest-meta">
+            <div><strong>Fecha del registro</strong><span>2026-05-22</span></div>
+            <div><strong>Tipo de cambio</strong><span>Evolutivo y correctivo</span></div>
+            <div><strong>Documento origen</strong><span>Registro de cambios - v3.0.26141.173.md</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Índice de páginas</h2>
+          <p>Cada entrada enlaza a la versión publicada a partir de su fichero Markdown de auditoría.</p>
+        </div>
+        <div class="release-list">
+<article class="release-card">
+        <div class="release-top">
+          <div>
+            <span class="pill">Versión 3.0.26141.173</span>
+            <h2>3.0.26141.173</h2>
+          </div>
+          <a class="card-link" href="v3-0-26141-173.html">Abrir</a>
+        </div>
+        <p>Documento de control y trazabilidad de cambios correspondiente a la version 3.0.26141.173. La version incorpora una evolucion relevante sobre la gestion de contratos de arrendamiento, la preparacion de datos para Allocation Account, la mejora de la experiencia de gestion documental en contratos y una nueva base func...</p>
+        <div class="meta-row">
+          <span class="meta-pill">Evolutivo y correctivo</span><span class="meta-pill">2026-05-22</span>
+        </div>
+      </article>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

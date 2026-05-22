@@ -80,6 +80,16 @@
     .shot-copy { padding:20px; }
     .pill-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
     .pill { padding:9px 12px; border-radius:999px; background:#f3f3f3; border:1px solid var(--line); color:#334155; font-size:.92rem; }
+    .release-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:20px; align-items:stretch; }
+    .release-card { padding:28px; border-radius:8px; background:#fff; border:1px solid var(--line); }
+    .release-pill { display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:#e6f2fb; color:var(--brand); font-size:.82rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; }
+    .release-pill::before { content:""; width:8px; height:8px; border-radius:999px; background:var(--brand); }
+    .release-card h3 { margin:16px 0 10px; font-size:1.6rem; line-height:1.12; }
+    .release-card p { margin:0; color:var(--muted); }
+    .release-meta { display:grid; gap:12px; }
+    .release-meta-item { padding:18px 20px; border-radius:8px; background:var(--surface); border:1px solid var(--line); }
+    .release-meta-item strong { display:block; margin-bottom:6px; font-size:.82rem; color:#475569; letter-spacing:.05em; text-transform:uppercase; }
+    .release-meta-item span { color:#1f2937; }
     .faq details { background:#ffffff; border:1px solid var(--line); border-radius:8px; padding:18px 20px; box-shadow:none; margin-bottom:12px; }
     .faq summary { cursor:pointer; font-weight:700; }
     .faq p { color:var(--muted); margin:12px 0 0; }
@@ -111,7 +121,7 @@
     .btn-light { color:#000; background:#fff; }
     .btn-ghost { color:#fff; background:transparent; border:1px solid rgba(255,255,255,.75); }
     footer { padding:0 0 44px; text-align:center; color:#6b7280; font-size:.93rem; }
-    @media (max-width:1080px) { .hero-grid,.split,.cta-box,.insurance-flow { grid-template-columns:1fr; } .grid-4 { grid-template-columns:repeat(2,minmax(0,1fr)); } .cta-actions { justify-content:flex-start; } }
+    @media (max-width:1080px) { .hero-grid,.split,.cta-box,.insurance-flow,.release-grid { grid-template-columns:1fr; } .grid-4 { grid-template-columns:repeat(2,minmax(0,1fr)); } .cta-actions { justify-content:flex-start; } }
     @media (max-width:820px) { .grid-3,.screenshot-grid,.hero-points,.process-grid { grid-template-columns:1fr; } .process-step.featured { grid-template-columns:1fr; } .topbar-inner { flex-direction:column; align-items:flex-start; padding:14px 0; } .hero-grid { padding:28px 0; } }
     @media (max-width:560px) { .container { width:min(var(--max), calc(100% - 24px)); } .timeline,.grid-4,.stat-grid { grid-template-columns:1fr; } h1 { font-size:2.3rem; } .lead-card { padding:22px; } }
   </style>
@@ -129,6 +139,7 @@
         <a class="topbar-link" href="#finanzas">Finanzas FRE</a>
         <a class="topbar-link" href="#seguros">Seguros</a>
         <a class="topbar-link" href="#capturas">Capturas</a>
+        <a class="topbar-link" href="#whats-new">What's new</a>
         <a class="topbar-link" href="#faq">FAQ</a>
         <a class="topbar-link" href="../../guides/index.html">Guías</a>
       </nav>
@@ -156,6 +167,7 @@
               <a class="btn btn-primary" href="#contacto">Solicitar demo</a>
               <a class="btn btn-secondary" href="#capacidades">Ver funcionalidades</a>
               <a class="btn btn-secondary" href="mejoras-v3-premium.html">Ver mejoras 3.0</a>
+              <a class="btn btn-secondary" href="whats-new/index.html">What's new</a>
             </div>
             <p class="hero-note">Pensada para patrimoniales, promotoras, gestoras, administradores, family office y organizaciones con cartera propia o arrendada.</p>
           </div>
@@ -490,6 +502,40 @@
             <img src="images/onedata-captura-operaciones.png" alt="Operaciones y movimientos del activo" />
             <div class="shot-copy"><h3>Operaciones y movimientos</h3><p>Base visual para explicar la trazabilidad operativa y financiera por activo inmobiliario.</p></div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="whats-new">
+      <div class="container">
+        <div class="section-head">
+          <h2>What's new y registro de cambios</h2>
+          <p>Un espacio específico para seguir la evolución de la solución con índice de versiones y una página dedicada por cada registro de auditoría publicado.</p>
+        </div>
+        <div class="release-grid">
+          <article class="release-card">
+            <span class="release-pill">Última release publicada</span>
+            <h3>Versión 3.0.26141.173</h3>
+            <p>La release actual incorpora evolución en líneas de contrato, soporte inicial para <code>Allocation Account</code>, mejoras documentales, nuevos datos comerciales y una nueva base funcional de avisos al inquilino.</p>
+            <div class="cta-row" style="margin-top:22px; margin-bottom:0;">
+              <a class="btn btn-primary" href="whats-new/v3-0-26141-173.html">Abrir versión</a>
+              <a class="btn btn-secondary" href="whats-new/index.html">Ver índice completo</a>
+            </div>
+          </article>
+          <aside class="release-meta">
+            <div class="release-meta-item">
+              <strong>Fecha del registro</strong>
+              <span>2026-05-22</span>
+            </div>
+            <div class="release-meta-item">
+              <strong>Tipo de cambio</strong>
+              <span>Evolutivo y correctivo</span>
+            </div>
+            <div class="release-meta-item">
+              <strong>Formato publicado</strong>
+              <span>Índice navegable y página HTML por cada fichero Markdown de auditoría.</span>
+            </div>
+          </aside>
         </div>
       </div>
     </section>

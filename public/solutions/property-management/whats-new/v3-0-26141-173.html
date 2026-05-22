@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.0.26141.173 | What's new | OneData Property Management</title>
+  <meta name="description" content="Documento de control y trazabilidad de cambios correspondiente a la version 3.0.26141.173. La version incorpora una evolucion relevante sobre la gestion de contratos de arrendamiento, la preparacion de datos para Allocation Account, la mejora de la experiencia de gestion documental en contratos y una nueva base func..." />
+  <style>
+    :root { --ink:#132238; --muted:#5f6f82; --line:#d8e1ea; --card:#ffffff; --panel:#f4f8fb; --brand:#0f6cbd; --brand-deep:#0a4f8a; --accent:#dff0ff; --max:1100px; --shadow:0 18px 40px rgba(15,35,56,.08); --radius:20px; --radius-sm:14px; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif; color:var(--ink); line-height:1.65; background:linear-gradient(180deg,#edf5fb 0%, #ffffff 26%); }
+    a { color:inherit; text-decoration:none; }
+    code { padding:.14rem .36rem; border-radius:999px; background:#edf4fa; font-family:Consolas,"SFMono-Regular",monospace; font-size:.92em; }
+    .container { width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+    .topbar { position:sticky; top:0; z-index:20; border-bottom:1px solid rgba(216,225,234,.88); background:rgba(255,255,255,.92); backdrop-filter:blur(14px); }
+    .topbar-inner { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:700; }
+    .brand-mark { width:38px; height:38px; border-radius:12px; display:grid; place-items:center; color:#fff; background:linear-gradient(135deg,var(--brand),#4da3e6); }
+    .nav-actions { display:flex; gap:12px; flex-wrap:wrap; }
+    .nav-link, .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 16px; border-radius:999px; font-weight:600; }
+    .nav-link { border:1px solid var(--line); background:#fff; }
+    .hero { padding:58px 0 30px; }
+    .hero-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:22px; align-items:start; }
+    .eyebrow { display:inline-flex; align-items:center; gap:10px; padding:7px 12px; border-radius:999px; font-size:.84rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--brand); background:var(--accent); }
+    .eyebrow-dot { width:8px; height:8px; border-radius:999px; background:var(--brand); }
+    h1 { margin:16px 0 12px; font-size:clamp(2.4rem,4.6vw,4.3rem); line-height:1.03; letter-spacing:-.04em; }
+    .hero-copy { margin:0; color:#425466; font-size:1.08rem; max-width:760px; }
+    .summary-card, .meta-card, .content-card { background:rgba(255,255,255,.92); border:1px solid rgba(216,225,234,.92); border-radius:var(--radius); box-shadow:var(--shadow); }
+    .summary-card { padding:26px; }
+    .meta-card { padding:24px; background:linear-gradient(180deg,#f7fbff 0%, #ffffff 100%); }
+    .meta-card h2 { margin:0 0 14px; font-size:1.1rem; }
+    .meta-list { display:grid; gap:12px; margin:0; }
+    .meta-row { display:grid; gap:4px; }
+    .meta-row strong { font-size:.84rem; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); }
+    .meta-row span { font-size:1rem; color:var(--ink); }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+    .btn-primary { color:#fff; background:var(--brand); }
+    .btn-primary:hover { background:var(--brand-deep); }
+    .btn-secondary { color:var(--ink); background:#fff; border:1px solid var(--line); }
+    .content { padding:8px 0 64px; }
+    .content-card { padding:34px; }
+    .content-card h1 { font-size:2.2rem; margin-top:0; }
+    .content-card h2 { margin:34px 0 12px; font-size:1.65rem; letter-spacing:-.02em; }
+    .content-card h3 { margin:24px 0 10px; font-size:1.15rem; }
+    .content-card p { margin:0 0 16px; color:#314355; }
+    .content-card ul { margin:0 0 18px; padding-left:22px; color:#314355; }
+    .content-card li { margin-bottom:10px; }
+    .table-wrap { margin:18px 0 24px; overflow:auto; border:1px solid var(--line); border-radius:16px; background:#fff; }
+    table { width:100%; border-collapse:collapse; min-width:720px; }
+    th, td { padding:14px 16px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); }
+    th { background:#eff6fb; font-size:.84rem; letter-spacing:.04em; text-transform:uppercase; color:#36506a; }
+    tr:last-child td { border-bottom:none; }
+    .source-note { margin-top:28px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:.94rem; }
+    @media (max-width: 900px) { .hero-grid { grid-template-columns:1fr; } }
+    @media (max-width: 600px) { .container { width:min(var(--max), calc(100% - 24px)); } .content-card, .summary-card, .meta-card { padding:22px; } .topbar-inner { align-items:flex-start; flex-direction:column; padding:14px 0; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="brand-mark">OF</div>
+        <span>OneData Property Management</span>
+      </div>
+      <div class="nav-actions">
+        <a class="nav-link" href="index.html">Índice de versiones</a>
+        <a class="nav-link" href="../index.html">Volver a la landing</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="summary-card">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> What's new</div>
+          <h1>3.0.26141.173</h1>
+          <p class="hero-copy">Documento de control y trazabilidad de cambios correspondiente a la version 3.0.26141.173. La version incorpora una evolucion relevante sobre la gestion de contratos de arrendamiento, la preparacion de datos para Allocation Account, la mejora de la experiencia de gestion documental en contratos y una nueva base func...</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contenido">Ver detalle</a>
+            <a class="btn btn-secondary" href="index.html">Todas las versiones</a>
+          </div>
+        </div>
+        <aside class="meta-card">
+          <h2>Ficha de la actualización</h2>
+          <div class="meta-list">
+            <div class="meta-row"><strong>Versión</strong><span>3.0.26141.173</span></div>
+            <div class="meta-row"><strong>Fecha del registro</strong><span>2026-05-22</span></div>
+            <div class="meta-row"><strong>Tipo de cambio</strong><span>Evolutivo y correctivo</span></div>
+            <div class="meta-row"><strong>Aplicación</strong><span>Property Management</span></div>
+            <div class="meta-row"><strong>Publisher</strong><span>OneData</span></div>
+            <div class="meta-row"><strong>Origen</strong><span>Registro de cambios - v3.0.26141.173.md</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section class="content" id="contenido">
+      <div class="container">
+        <article class="content-card">
+<h1>Registro de cambios y versiones</h1>
+<h2>Datos generales</h2>
+<ul><li>Aplicacion: Property Management</li><li>Publisher: OneData</li><li>Version: 3.0.26141.173</li><li>Fecha del registro: 2026-05-22</li><li>Tipo de cambio: Evolutivo y correctivo</li><li>Entorno: Pendiente de completar</li><li>Responsable: Pendiente de completar</li></ul>
+<h2>Resumen ejecutivo</h2>
+<p>Documento de control y trazabilidad de cambios correspondiente a la version <code>3.0.26141.173</code>.</p>
+<p>La version incorpora una evolucion relevante sobre la gestion de contratos de arrendamiento, la preparacion de datos para Allocation Account, la mejora de la experiencia de gestion documental en contratos y una nueva base funcional para avisos al inquilino. Tambien incluye cambios de upgrade, permisos, traducciones y ajustes de interfaz asociados.</p>
+<h2>Detalle de cambios</h2>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Tipo</th><th>Descripcion funcional/tecnica</th><th>Objeto o area afectada</th><th>Motivo</th><th>Riesgo/impacto</th></tr></thead><tbody><tr><td>1</td><td>Evolutivo</td><td>Se anade el campo <code>Type</code> en las lineas de contrato de arrendamiento y se habilita la seleccion de <code>G/L Account</code>, <code>Allocation Account</code> y textos estandar, incluyendo logica de validacion, lookup y carga automatica de descripcion/datos relacionados.</td><td>Tabla <code>Lease Contract Line</code>, subpagina de lineas de contrato, enums <code>Lease Contract Line Type</code>.</td><td>Preparar el modelo de lineas de contrato para soportar nuevas tipologias contables y ampliar la flexibilidad funcional.</td><td>Impacto medio-alto en la edicion de lineas, datos existentes y procesos de facturacion. Requiere validacion funcional y regresion en contratos.</td></tr><tr><td>2</td><td>Correctivo/Evolutivo</td><td>Se incorporan rutinas de instalacion y upgrade para inicializar el nuevo <code>Type</code> de las lineas historicas de contrato con valor <code>G/L Account</code> cuando proceda.</td><td>Codeunits <code>Install</code> y <code>Upgrade</code>.</td><td>Garantizar compatibilidad con datos ya existentes tras introducir el nuevo enum/tipo en lineas de contrato.</td><td>Riesgo medio si existen lineas antiguas con casuisticas no previstas. Recomendable probar upgrade con copia de datos real.</td></tr><tr><td>3</td><td>Evolutivo</td><td>Se ajusta la generacion de facturas de contratos para construir una descripcion de documento mas explicita por periodo, propagar <code>Allocation Account No.</code> a la linea de venta y bloquear la facturacion de lineas cuyo <code>Type</code> sea <code>Allocation Account</code>.</td><td>Codeunit <code>Real Estate Management</code>, report <code>Create Lease Contract Invoices</code>.</td><td>Mejorar trazabilidad de las facturas y controlar el alcance real del soporte de Allocation Account en la emision.</td><td>Impacto alto en facturacion. Evita errores de uso no soportado, pero introduce una restriccion funcional que debe comunicarse a negocio.</td></tr><tr><td>4</td><td>Evolutivo</td><td>Se amplian las fichas de activo y contrato con nueva informacion comercial y de seguimiento: titulo del activo, ultimo precio de alquiler, importes de referencia, dimensiones, tipo de propietario de distribucion y codigo de Allocation Account. Tambien se anade acceso directo a Allocation Accounts desde el activo.</td><td>Tablas y paginas <code>Fixed Real Estate</code> y <code>Lease Contract Card</code>, enum <code>Distribution Owner Type</code>.</td><td>Mejorar la gestion comercial, contable y de consulta desde los activos inmobiliarios y los contratos asociados.</td><td>Impacto medio en interfaz y mantenimiento de datos maestros. Requiere validacion visual y de permisos.</td></tr><tr><td>5</td><td>Evolutivo</td><td>Se mejora la gestion documental de contratos permitiendo cargar multiples ficheros desde la lista y la ficha del contrato, y se habilita la copia de adjuntos desde el activo inmobiliario al contrato evitando duplicados.</td><td>Paginas <code>Lease Contract List</code> y <code>Lease Contract Card</code>, codeunit <code>Real Estate Management</code>.</td><td>Facilitar la gestion operativa de documentacion contractual y reutilizar anexos ya existentes en el activo.</td><td>Impacto medio. Debe revisarse en escenarios con alto volumen de adjuntos y permisos de documentos.</td></tr><tr><td>6</td><td>Evolutivo</td><td>Se incorporan totales visibles en la subpagina de lineas de contrato para importe base IVA, importe IVA e importe de impuestos calculados, con refresco en carga y cambio de registro.</td><td>Pagina <code>Lease Contract Subform</code>.</td><td>Mejorar la visibilidad del importe acumulado de las lineas durante la edicion del contrato.</td><td>Riesgo bajo-medio. Conviene validar rendimiento en contratos con muchas lineas.</td></tr><tr><td>7</td><td>Evolutivo</td><td>Se crea una nueva funcionalidad de avisos al inquilino con cabecera, destinatarios, estados, prioridades, tipos, publicacion, simulacion de envio por correo, control de lectura en portal y relacion con activo, contrato e incidencia.</td><td>Nuevas tablas, paginas, enums y codeunits <code>FRE Tenant Notice*</code>.</td><td>Disponer de una base funcional para comunicar avisos a inquilinos desde Business Central y relacionarlos con contratos e incidencias.</td><td>Impacto alto por alta funcional nueva. Requiere pruebas funcionales completas, seguridad y validacion del flujo de publicacion/envio.</td></tr><tr><td>8</td><td>Evolutivo</td><td>Se anade logica para cargar destinatarios desde contratos activos/filtrados y registrar comentarios de sistema en incidencias vinculadas al publicar o comunicar avisos.</td><td>Codeunit <code>FRE Tenant Notice Source Mgt.</code>, comentarios de incidencias.</td><td>Integrar los avisos con la operativa real de contratos e incidencias para mejorar trazabilidad.</td><td>Impacto medio-alto sobre procesos relacionados entre modulos. Revisar consistencia de filtros de contratos y comentarios generados.</td></tr><tr><td>9</td><td>Tecnico</td><td>Se actualizan permisos de lectura/ejecucion y metadatos de extension para cubrir nuevos objetos funcionales, atributos, equipos, superficies y avisos al inquilino, junto con actualizacion de traducciones y versionado de la app.</td><td><code>PermissionSet</code>, <code>extensionsPermissionSet.xml</code>, <code>Translations</code>, <code>app.json</code>.</td><td>Asegurar despliegue coherente de la nueva funcionalidad y disponibilidad de etiquetas/traducciones.</td><td>Riesgo medio si algun rol queda corto o sobredimensionado. Recomendable revisar seguridad por perfil.</td></tr></tbody></table></div>
+<h2>Validacion y pruebas</h2>
+<div class="table-wrap"><table><thead><tr><th>Prueba</th><th>Descripcion</th><th>Resultado</th><th>Evidencia</th></tr></thead><tbody><tr><td>1</td><td>Upgrade de datos sobre base con contratos existentes, verificando inicializacion de <code>Type</code> en <code>Lease Contract Line</code>.</td><td>Pendiente</td><td>Pendiente de completar</td></tr><tr><td>2</td><td>Alta y edicion de lineas de contrato con <code>G/L Account</code>, <code>Allocation Account</code> y texto estandar.</td><td>Pendiente</td><td>Pendiente de completar</td></tr><tr><td>3</td><td>Generacion de factura de contrato con descripcion por periodo y validacion del bloqueo para lineas <code>Allocation Account</code>.</td><td>Pendiente</td><td>Pendiente de completar</td></tr><tr><td>4</td><td>Carga de adjuntos en contrato, copia de adjuntos desde activo y comprobacion de no duplicidad.</td><td>Pendiente</td><td>Pendiente de completar</td></tr><tr><td>5</td><td>Revision visual y funcional de nuevos campos en ficha de activo, ficha de contrato y totales de lineas.</td><td>Pendiente</td><td>Pendiente de completar</td></tr><tr><td>6</td><td>Flujo completo de aviso a inquilino: alta, destinatarios, publicacion, simulacion de envio y seguimiento de lectura.</td><td>Pendiente</td><td>Pendiente de completar</td></tr><tr><td>7</td><td>Validacion de permisos sobre nuevos objetos y textos traducidos en interfaz.</td><td>Pendiente</td><td>Pendiente de completar</td></tr></tbody></table></div>
+<h2>Aprobaciones</h2>
+<div class="table-wrap"><table><thead><tr><th>Rol</th><th>Responsable</th><th>Fecha</th><th>Estado</th></tr></thead><tbody><tr><td>Desarrollo</td><td>Pendiente de completar</td><td>Pendiente de completar</td><td>Pendiente de completar</td></tr><tr><td>Negocio/Funcional</td><td>Pendiente de completar</td><td>Pendiente de completar</td><td>Pendiente de completar</td></tr><tr><td>Auditoria/Calidad</td><td>Pendiente de completar</td><td>Pendiente de completar</td><td>Pendiente de completar</td></tr></tbody></table></div>
+<h2>Observaciones</h2>
+<ul><li>La version introduce funcionalidad nueva todavia no completamente soportada en facturacion para lineas de tipo <code>Allocation Account</code>; el comportamiento actual bloquea expresamente ese escenario.</li><li>Existen cambios amplios de traducciones y permisos asociados a nuevos objetos que deben revisarse en el despliegue final.</li><li>Conviene completar este registro con entorno objetivo, responsable de liberacion y evidencias de prueba antes del cierre formal de la version.</li></ul>
+          <div class="source-note">
+            Página generada automáticamente a partir del fichero de auditoría <code>Registro de cambios - v3.0.26141.173.md</code>.
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

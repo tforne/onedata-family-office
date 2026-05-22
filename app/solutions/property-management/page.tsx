@@ -28,6 +28,14 @@ export default function PropertyManagementSolutionPage() {
               >
                 Ver mejoras 3.0
               </a>
+              <a
+                href="/solutions/property-management/whats-new/index.html"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-2xl border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                What's new
+              </a>
             </div>
           </div>
         </div>
