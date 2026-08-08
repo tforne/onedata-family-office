@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OneData Family Office | Business Central</title>
-  <meta name="description" content="Gestión inmobiliaria avanzada para Microsoft Dynamics 365 Business Central: activos, contratos, FRE Journal, FRE Ledger, extractos bancarios, importación a diario general, seguros, incidencias, liquidaciones, IRPF e integración API." />
+  <title>OneData Property Management | Business Central</title>
+  <meta name="description" content="Gestión inmobiliaria avanzada para Microsoft Dynamics 365 Business Central con las mejoras de las versiones 3 y 4: activos jerárquicos, contratos, Financial Flow, finanzas FRE, incidencias y análisis multicompañía." />
   <style>
     :root { --ink:#1b1b1b; --muted:#5c5c5c; --line:#e6e6e6; --paper:#f2f2f2; --card:#ffffff; --brand:#0067b8; --brand-deep:#004a86; --accent:#e6f2fb; --surface:#f8f8f8; --shadow:0 8px 24px rgba(0,0,0,.08); --radius-xl:12px; --radius-lg:8px; --max:1260px; }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
-    body { margin:0; color:var(--ink); font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif; line-height:1.6; background:#ffffff; }
+    body { margin:0; overflow-x:hidden; color:var(--ink); font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif; line-height:1.6; background:#ffffff; }
     a { color:inherit; text-decoration:none; }
     .container { width:min(var(--max), calc(100% - 48px)); margin:0 auto; }
     .topbar { position:sticky; top:0; z-index:20; border-bottom:1px solid var(--line); background:rgba(255,255,255,.96); backdrop-filter:blur(10px); }
@@ -22,6 +22,7 @@
     .hero { padding:0 0 28px; }
     .hero-shell { border:none; border-radius:0; overflow:hidden; box-shadow:none; background:linear-gradient(90deg,#f3f9fd 0%, #ffffff 62%); color:var(--ink); }
     .hero-grid { display:grid; grid-template-columns:1.25fr .75fr; gap:28px; padding:56px 0 48px; align-items:start; }
+    .hero-grid > *, .version-header > * { min-width:0; }
     .eyebrow { display:inline-flex; align-items:center; gap:10px; padding:0; border-radius:0; font-size:.8rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--brand); background:none; border:none; }
     .eyebrow-dot { width:8px; height:8px; border-radius:999px; background:var(--brand); box-shadow:none; }
     h1 { margin:16px 0; font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif; font-weight:600; font-size:clamp(2.5rem,5vw,4.25rem); line-height:1.05; letter-spacing:-.03em; }
@@ -90,6 +91,33 @@
     .release-meta-item { padding:18px 20px; border-radius:8px; background:var(--surface); border:1px solid var(--line); }
     .release-meta-item strong { display:block; margin-bottom:6px; font-size:.82rem; color:#475569; letter-spacing:.05em; text-transform:uppercase; }
     .release-meta-item span { color:#1f2937; }
+    .evolution-stack { display:grid; gap:22px; }
+    .version-block { overflow:hidden; border:1px solid var(--line); border-radius:10px; background:#fff; }
+    .version-block.featured { color:#fff; border-color:#005da6; background:linear-gradient(120deg,#073453 0%,#0067b8 62%,#1786cf 100%); }
+    .version-header { display:grid; grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr); gap:28px; align-items:center; padding:32px; }
+    .version-label { display:inline-flex; align-items:center; gap:9px; color:var(--brand); font-size:.8rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+    .version-label::before { content:""; width:8px; height:8px; border-radius:50%; background:currentColor; }
+    .version-block.featured .version-label { color:#9ed8ff; }
+    .version-header h3 { margin:10px 0; font-size:clamp(1.85rem,3vw,2.8rem); line-height:1.08; letter-spacing:-.03em; font-weight:600; }
+    .version-header p { margin:0; color:var(--muted); }
+    .version-block.featured .version-header p { color:rgba(255,255,255,.8); }
+    .version-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+    .version-link { display:inline-flex; padding:10px 15px; border-radius:3px; border:1px solid var(--line); background:#fff; font-weight:700; }
+    .version-block.featured .version-link { color:#004a86; border-color:#fff; }
+    .version-link.secondary { color:inherit; background:transparent; }
+    .version-block.featured .version-link.secondary { color:#fff; border-color:rgba(255,255,255,.55); }
+    .version-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+    .version-item { padding:19px; border:1px solid var(--line); border-radius:8px; background:var(--surface); }
+    .version-item strong { display:block; margin-bottom:6px; }
+    .version-item span { display:block; color:var(--muted); font-size:.92rem; line-height:1.5; }
+    .version-block.featured .version-item { border-color:rgba(255,255,255,.2); background:rgba(255,255,255,.09); }
+    .version-block.featured .version-item span { color:rgba(255,255,255,.74); }
+    .v3-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:0; border-top:1px solid var(--line); }
+    .v3-item { min-height:150px; padding:20px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .v3-item:nth-child(5n) { border-right:0; }
+    .v3-item:nth-last-child(-n+5) { border-bottom:0; }
+    .v3-item strong { display:block; margin-bottom:7px; font-size:.98rem; line-height:1.25; }
+    .v3-item span { color:var(--muted); font-size:.88rem; line-height:1.45; }
     .faq details { background:#ffffff; border:1px solid var(--line); border-radius:8px; padding:18px 20px; box-shadow:none; margin-bottom:12px; }
     .faq summary { cursor:pointer; font-weight:700; }
     .faq p { color:var(--muted); margin:12px 0 0; }
@@ -121,9 +149,9 @@
     .btn-light { color:#000; background:#fff; }
     .btn-ghost { color:#fff; background:transparent; border:1px solid rgba(255,255,255,.75); }
     footer { padding:0 0 44px; text-align:center; color:#6b7280; font-size:.93rem; }
-    @media (max-width:1080px) { .hero-grid,.split,.cta-box,.insurance-flow,.release-grid { grid-template-columns:1fr; } .grid-4 { grid-template-columns:repeat(2,minmax(0,1fr)); } .cta-actions { justify-content:flex-start; } }
-    @media (max-width:820px) { .grid-3,.screenshot-grid,.hero-points,.process-grid { grid-template-columns:1fr; } .process-step.featured { grid-template-columns:1fr; } .topbar-inner { flex-direction:column; align-items:flex-start; padding:14px 0; } .hero-grid { padding:28px 0; } }
-    @media (max-width:560px) { .container { width:min(var(--max), calc(100% - 24px)); } .timeline,.grid-4,.stat-grid { grid-template-columns:1fr; } h1 { font-size:2.3rem; } .lead-card { padding:22px; } }
+    @media (max-width:1080px) { .hero-grid,.split,.cta-box,.insurance-flow,.release-grid,.version-header { grid-template-columns:1fr; } .grid-4 { grid-template-columns:repeat(2,minmax(0,1fr)); } .v3-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .v3-item,.v3-item:nth-child(5n),.v3-item:nth-last-child(-n+5) { border-right:1px solid var(--line); border-bottom:1px solid var(--line); } .v3-item:nth-child(2n) { border-right:0; } .v3-item:nth-last-child(-n+2) { border-bottom:0; } .cta-actions { justify-content:flex-start; } }
+    @media (max-width:820px) { .grid-3,.screenshot-grid,.hero-points,.process-grid,.version-grid { grid-template-columns:minmax(0,1fr); } .process-step.featured { grid-template-columns:1fr; } .topbar-inner { flex-direction:column; align-items:flex-start; padding:14px 0; } .topbar-nav { width:100%; } .hero-grid { padding:28px 0; } }
+    @media (max-width:560px) { .container { width:min(var(--max), calc(100% - 24px)); } .timeline,.grid-4,.stat-grid,.v3-grid { grid-template-columns:minmax(0,1fr); } .v3-item,.v3-item:nth-child(2n),.v3-item:nth-last-child(-n+2) { border-right:0; border-bottom:1px solid var(--line); } .v3-item:last-child { border-bottom:0; } .version-header { padding:24px; } h1 { font-size:2.3rem; overflow-wrap:anywhere; } .lead-card { padding:22px; } }
   </style>
 </head>
 <body>
@@ -131,12 +159,13 @@
     <div class="container topbar-inner">
       <div class="brand">
         <div class="brand-mark">OF</div>
-        <span>OneData Family Office</span>
+        <span>OneData Property Management</span>
       </div>
       <nav class="topbar-nav" aria-label="Navegación principal">
+        <a class="topbar-link" href="#evolucion">Versiones 3 y 4</a>
         <a class="topbar-link" href="#capacidades">Capacidades</a>
         <a class="topbar-link" href="#referencia-alquiler">Índice alquiler</a>
-        <a class="topbar-link" href="#finanzas">Finanzas FRE</a>
+        <a class="topbar-link" href="#finanzas">Finanzas y análisis</a>
         <a class="topbar-link" href="#seguros">Seguros</a>
         <a class="topbar-link" href="#capturas">Capturas</a>
         <a class="topbar-link" href="#whats-new">What's new</a>
@@ -153,21 +182,21 @@
           <div>
             <div class="eyebrow"><span class="eyebrow-dot"></span> Extensión para Microsoft Dynamics 365 Business Central</div>
             <h1>La plataforma inmobiliaria que unifica operación, contratos y finanzas.</h1>
-            <p class="hero-copy">OneData Family Office centraliza activos inmobiliarios, alquileres, incidencias, seguros y control económico dentro de Business Central, con una base preparada para automatización, trazabilidad y crecimiento.</p>
+            <p class="hero-copy">OneData Property Management centraliza activos inmobiliarios, alquileres, incidencias, seguros y control económico dentro de Business Central, con una base preparada para automatización, trazabilidad y crecimiento.</p>
             <ul class="hero-points">
-              <li>Activos inmobiliarios con ficha, relaciones, imágenes y trazabilidad.</li>
+              <li>Activos inmobiliarios con estructura jerárquica, imágenes y trazabilidad.</li>
               <li>Contratos de alquiler con facturación, renovaciones, incrementos y liquidación.</li>
               <li>Índice de referencia SERPAVI / MIVAU con histórico, referencia activa y cálculo automático.</li>
               <li>FRE Journal y FRE Ledger para ingresos, gastos, cobros y pagos por activo.</li>
               <li>Importación desde Excel al FRE Journal o al diario general con vista previa y validación.</li>
               <li>Extractos bancarios, integración con Gen. Journal, IRPF y APIs listas para integración.</li>
               <li>Seguros por inmueble y notificación de siniestros desde la incidencia.</li>
+              <li>Financial Flow multicompañía con rentabilidad, previsiones, riesgo y snapshots.</li>
             </ul>
             <div class="cta-row">
               <a class="btn btn-primary" href="#contacto">Solicitar demo</a>
               <a class="btn btn-secondary" href="#capacidades">Ver funcionalidades</a>
-              <a class="btn btn-secondary" href="mejoras-v4.html">Ver mejoras Version 4</a>
-              <a class="btn btn-secondary" href="mejoras-v3-premium.html">Ver mejoras 3.0</a>
+              <a class="btn btn-secondary" href="#evolucion">Ver evolución v3 → v4</a>
               <a class="btn btn-secondary" href="whats-new/index.html">What's new</a>
             </div>
             <p class="hero-note">Pensada para patrimoniales, promotoras, gestoras, administradores, family office y organizaciones con cartera propia o arrendada.</p>
@@ -176,10 +205,10 @@
             <div class="panel-card">
               <h3>Visión funcional actual</h3>
               <div class="stat-grid">
-                <div class="stat"><strong>Activos</strong><span>Ficha de inmueble, relaciones, documentación, imágenes y movimientos asociados.</span></div>
+                <div class="stat"><strong>Activos</strong><span>Jerarquías, ficha de inmueble, documentación, imágenes y movimientos asociados.</span></div>
                 <div class="stat"><strong>Contratos</strong><span>Lease contracts, revisión de rentas, facturación y liquidación contractual.</span></div>
-                <div class="stat"><strong>Finanzas FRE</strong><span>Journal, ledger, Excel, extractos bancarios e imputación por activo.</span></div>
-                <div class="stat"><strong>Integración</strong><span>Gen. Journal, IRPF, APIs, OneData Fiscal y procesos financieros de Business Central.</span></div>
+                <div class="stat"><strong>Financial Flow</strong><span>Análisis multicompañía, rentabilidad, riesgo, previsiones e histórico.</span></div>
+                <div class="stat"><strong>Operación conectada</strong><span>Contratos vigentes, incidencias, seguros e integración financiera.</span></div>
               </div>
             </div>
             <div class="panel-card">
@@ -205,11 +234,74 @@
       </div>
     </section>
 
+    <section class="section" id="evolucion">
+      <div class="container">
+        <div class="section-head">
+          <h2>Dos versiones que amplían el control de la gestión inmobiliaria.</h2>
+          <p>La versión 3 consolidó la operativa patrimonial y financiera. La versión 4 conecta esa base con una estructura avanzada de activos, análisis consolidado y acciones operativas guiadas.</p>
+        </div>
+
+        <div class="evolution-stack">
+          <article class="version-block featured">
+            <div class="version-header">
+              <div>
+                <span class="version-label">Versión 4 · Nueva evolución</span>
+                <h3>Estructure, analice y actúe desde una única solución.</h3>
+                <p>Una nueva capa de control para representar inmuebles complejos, interpretar la rentabilidad y convertir desviaciones en acciones trazables.</p>
+                <div class="version-actions">
+                  <a class="version-link" href="mejoras-v4.html">Ver mejoras Version 4</a>
+                  <a class="version-link secondary" href="#finanzas">Explorar Financial Flow</a>
+                </div>
+              </div>
+              <div class="version-grid">
+                <div class="version-item"><strong>Estructura jerárquica de activos</strong><span>Propiedades, viviendas, habitaciones, parkings y trasteros organizados mediante relaciones padre-hijo y altas guiadas.</span></div>
+                <div class="version-item"><strong>Financial Flow multicompañía</strong><span>Contratos, rentas, valor del activo, previsiones, yield, ROI, cash flow y riesgo en una sola vista consolidada.</span></div>
+                <div class="version-item"><strong>Incidencias conectadas</strong><span>Selección del contrato vigente, sincronización de cliente y contacto y creación directa desde diferencias de cobro.</span></div>
+                <div class="version-item"><strong>Riesgo y vencimientos</strong><span>Alertas por contratos sensibles, deuda, concentración, falta de garantías, datos incompletos o rentabilidad insuficiente.</span></div>
+                <div class="version-item"><strong>Snapshots comparables</strong><span>Guarde fotografías históricas de la cartera, consulte su evolución y exporte el análisis a Excel.</span></div>
+                <div class="version-item"><strong>Del análisis a la acción</strong><span>Cree incidencias contextualizadas con activo, contrato, cliente, contacto y datos económicos relevantes.</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="version-block">
+            <div class="version-header">
+              <div>
+                <span class="version-label">Versión 3 · Base consolidada</span>
+                <h3>Más visión global, automatización y solidez operativa.</h3>
+                <p>La versión 3 reforzó la gestión patrimonial multiempresa, los movimientos económicos y los procesos contractuales que sustentan la evolución actual.</p>
+                <div class="version-actions">
+                  <a class="version-link" href="mejoras-v3-premium.html">Ver mejoras Versión 3</a>
+                </div>
+              </div>
+              <div class="version-grid">
+                <div class="version-item"><strong>Visión patrimonial global</strong><span>Una lectura transversal de activos y operaciones para escenarios multiempresa y Family Office.</span></div>
+                <div class="version-item"><strong>Control económico reforzado</strong><span>Cobros, pagos, propuestas de movimiento y registro FRE con mayor trazabilidad.</span></div>
+                <div class="version-item"><strong>Contratos y fiscalidad</strong><span>Liquidación, documentación contractual e integración funcional con OneData Fiscal.</span></div>
+              </div>
+            </div>
+            <div class="v3-grid">
+              <div class="v3-item"><strong>Gestión patrimonial más completa</strong><span>Mayor cobertura para activos, contratos y explotación económica.</span></div>
+              <div class="v3-item"><strong>Compartición global patrimonial</strong><span>Visión transversal entre compañías.</span></div>
+              <div class="v3-item"><strong>Control de cobros y pagos</strong><span>Seguimiento más claro de pendientes y operaciones.</span></div>
+              <div class="v3-item"><strong>Movimientos FRE avanzados</strong><span>Registro robusto y trazable por activo.</span></div>
+              <div class="v3-item"><strong>Distribución por superficie</strong><span>Reparto automático proporcional entre activos relacionados.</span></div>
+              <div class="v3-item"><strong>Acceso directo a movimientos</strong><span>Navegación más rápida desde la ficha del activo.</span></div>
+              <div class="v3-item"><strong>Liquidación de contratos</strong><span>Cierre contractual y entrega de llaves.</span></div>
+              <div class="v3-item"><strong>Documentación contractual</strong><span>Documentos asociados a liquidación y posesión.</span></div>
+              <div class="v3-item"><strong>Integración OneData Fiscal</strong><span>Tratamiento de IRPF en alquileres.</span></div>
+              <div class="v3-item"><strong>Base SaaS y modular</strong><span>Arquitectura preparada para nuevas capacidades.</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="capacidades">
       <div class="container">
         <div class="section-head">
           <h2>Capacidades actuales del producto</h2>
-          <p>La landing se ha alineado con funcionalidades existentes en la solución: activos inmobiliarios, contratos, liquidaciones, finanzas FRE, extractos, integración con diario general, seguros, incidencias, fiscalidad e integración API.</p>
+          <p>Funcionalidades consolidadas en las versiones 3 y 4: activos jerárquicos, contratos, liquidaciones, finanzas FRE, Financial Flow, seguros, incidencias conectadas, fiscalidad e integración API.</p>
         </div>
         <div class="grid-3">
           <article class="card feature-card">
@@ -220,12 +312,14 @@
               </div>
               <h3>Gestión de activos inmobiliarios</h3>
             </div>
-            <p>Ficha avanzada de <code>Fixed Real Estate</code> con información descriptiva, datos operativos, relaciones y acceso directo a movimientos y acciones relacionadas.</p>
+            <p>Ficha avanzada de <code>Fixed Real Estate</code> y nueva vista estructural para organizar propiedades, activos principales y subactivos relacionados.</p>
             <ul class="feature-list">
               <li>Card y list de activos inmobiliarios.</li>
               <li>Imágenes, avatar y documentación asociada.</li>
               <li>Acceso directo a contratos, incidencias y movimientos FRE.</li>
               <li>Clasificación y contexto comercial del inmueble.</li>
+              <li>Alta guiada de viviendas, habitaciones, parkings y trasteros.</li>
+              <li>Validación de jerarquías y propiedad raíz.</li>
             </ul>
           </article>
           <article class="card feature-card">
@@ -293,6 +387,22 @@
             </ul>
           </article>
           <article class="card feature-card">
+            <span class="feature-tag">Financial Flow · V4</span>
+            <div class="feature-head">
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 19V9"></path><path d="M10 19V5"></path><path d="M16 19v-7"></path><path d="M22 19H2"></path><path d="m4 7 6-4 6 6 5-4"></path></svg>
+              </div>
+              <h3>Mapa financiero multicompañía</h3>
+            </div>
+            <p>Centro de análisis consolidado de contratos, rentas, valor de activo y riesgo, configurable y preparado para comparar la evolución de la cartera.</p>
+            <ul class="feature-list">
+              <li>Previsiones a 12, 24 y 60 meses.</li>
+              <li>Yield, ROI, cap rate, plusvalía y cash flow.</li>
+              <li>Riesgos, vencimientos y concentración por cliente.</li>
+              <li>Snapshots, comparativa y exportación a Excel.</li>
+            </ul>
+          </article>
+          <article class="card feature-card">
             <span class="feature-tag">Importación</span>
             <div class="feature-head">
               <div class="feature-icon" aria-hidden="true">
@@ -333,13 +443,15 @@
               </div>
               <h3>Incidencias y adjuntos</h3>
             </div>
-            <p>Existe gestión de incidencias inmobiliarias con seguimiento, comentarios, adjuntos, notificaciones y relación con la póliza del inmueble cuando procede.</p>
+            <p>Gestión de incidencias con seguimiento, adjuntos, seguros y selección guiada del contrato vigente asociado al activo, incluso en escenarios multicompañía.</p>
             <ul class="feature-list">
               <li>Incidencias por activo inmobiliario.</li>
               <li>Adjuntos, imágenes y contenido documental.</li>
               <li>Correos de recepción, actualización y cierre.</li>
               <li>Histórico para coordinación con mantenimiento.</li>
               <li>Notificación manual al seguro desde la incidencia.</li>
+              <li>Sincronización automática de cliente y contacto.</li>
+              <li>Creación desde diferencias de cobro detectadas en Financial Flow.</li>
             </ul>
           </article>
           <article class="card feature-card" id="seguros">
@@ -371,7 +483,7 @@
             <div>
               <div class="section-head" style="text-align:left; margin:0 0 18px;">
                 <h2>Un índice de referencia útil dentro de la operativa, no solo una consulta externa.</h2>
-                <p>OneData Family Office incorpora una gestión específica del índice de referencia de alquiler para conservar histórico por inmueble, recalcular importes y dejar visible la referencia vigente dentro de Business Central.</p>
+                <p>OneData Property Management incorpora una gestión específica del índice de referencia de alquiler para conservar histórico por inmueble, recalcular importes y dejar visible la referencia vigente dentro de Business Central.</p>
               </div>
               <div class="timeline">
                 <article class="step"><div class="step-number">1</div><h3>Consulta</h3><p>Acceso directo al portal oficial SERPAVI / MIVAU desde la ficha del inmueble.</p></article>
@@ -397,21 +509,23 @@
           <div class="split">
             <div>
               <div class="section-head" style="text-align:left; margin:0 0 18px;">
-                <h2>La parte diferencial: una capa financiera pensada para patrimonio inmobiliario.</h2>
-                <p>El modelo FRE no se limita a mostrar ingresos y gastos. Añade procesos específicos para importar, validar, registrar y consultar movimientos económicos ligados a cada activo inmobiliario.</p>
+                <h2>Del movimiento financiero a la decisión sobre toda la cartera.</h2>
+                <p>La base FRE de la versión 3 registra, valida y conecta movimientos por activo. Financial Flow, incorporado en la versión 4, consolida contratos, rentas, valor, previsiones y riesgo entre compañías.</p>
               </div>
               <div class="timeline">
                 <article class="step"><div class="step-number">1</div><h3>Entrada</h3><p>Registro manual, importación Excel o extracto bancario.</p></article>
                 <article class="step"><div class="step-number">2</div><h3>Preparación</h3><p>Vista previa de importación, sugerencia de inmueble y validación de datos.</p><div class="step-branch">Si hay errores, se corrigen antes del registro definitivo.</div></article>
                 <article class="step"><div class="step-number">3</div><h3>Registro</h3><p>Posting en diario FRE o diario general según el flujo operativo.</p></article>
                 <article class="step"><div class="step-number">4</div><h3>Integración</h3><p>Las líneas del diario general pueden generar automáticamente su reflejo en FRE.</p></article>
-                <article class="step"><div class="step-number">5</div><h3>Análisis</h3><p>Base para seguimiento económico, imputación y reporting por inmueble.</p></article>
+                <article class="step"><div class="step-number">5</div><h3>Análisis</h3><p>Cálculo de rentabilidad, previsiones, concentración, vencimientos y nivel de riesgo.</p></article>
+                <article class="step"><div class="step-number">6</div><h3>Acción</h3><p>Snapshots, comparación, Excel y creación de incidencias ante diferencias de cobro.</p></article>
               </div>
             </div>
             <div class="visual-stack">
               <div class="metric-box"><strong>Importación asistida</strong><span>Plantillas, preview, reglas, extractos y validación antes de registrar.</span></div>
               <div class="metric-box"><strong>Trazabilidad por activo</strong><span>Cada movimiento mantiene su relación con el inmueble y su contexto operativo.</span></div>
               <div class="metric-box"><strong>Contabilidad conectada</strong><span>El diario general puede alimentar la capa FRE para unificar explotación inmobiliaria y registro contable.</span></div>
+              <div class="metric-box"><strong>Mapa consolidado</strong><span>Yield bruto y neto, ROI, cap rate, cash flow, alertas y previsiones de varias empresas en una vista.</span></div>
             </div>
           </div>
         </div>
@@ -424,9 +538,9 @@
           <div class="insurance-flow">
             <div>
               <div class="lead-card">
-                <div class="process-kicker">Seguros e incidencias</div>
-                <h2>Incidencias y seguros en el mismo flujo operativo.</h2>
-                <p>La gestión de incidencias ya no se queda en el seguimiento técnico. También puede enlazarse con la póliza del inmueble y preparar la comunicación al seguro desde la propia operativa.</p>
+                <div class="process-kicker">Contratos, seguros e incidencias</div>
+                <h2>Todo el contexto operativo dentro de la incidencia.</h2>
+                <p>La incidencia puede enlazarse con el contrato vigente y con la póliza aplicable. Cliente, contacto y datos del seguro quedan disponibles sin duplicar información.</p>
               </div>
               <div class="process-grid">
                 <article class="process-step featured">
@@ -549,7 +663,7 @@
         </div>
         <details>
           <summary>¿La solución está desarrollada específicamente para Microsoft Dynamics 365 Business Central?</summary>
-          <p>Sí. OneData Family Office está concebida como extensión AL para Business Central y utiliza páginas, procesos y modelos de trabajo integrados en el entorno estándar.</p>
+          <p>Sí. OneData Property Management está concebida como extensión AL para Business Central y utiliza páginas, procesos y modelos de trabajo integrados en el entorno estándar.</p>
         </details>
         <details>
           <summary>¿Qué cubre actualmente además del control del inmueble?</summary>
@@ -565,7 +679,7 @@
         </details>
         <details>
           <summary>¿Está preparada para escenarios multiempresa o evolución futura?</summary>
-          <p>Sí. La versión actual y la línea evolutiva del producto apuntan a escenarios de mayor complejidad operativa, integraciones externas y crecimiento modular.</p>
+          <p>Sí. Financial Flow analiza contratos y activos de varias empresas desde un mapa común, manteniendo la organización societaria existente. La arquitectura también conserva una base modular para nuevas capacidades e integraciones.</p>
         </details>
       </div>
     </section>
@@ -591,6 +705,12 @@
             <span class="pill">Incidencias y adjuntos</span>
             <span class="pill">IRPF</span>
             <span class="pill">APIs</span>
+            <span class="pill">Jerarquía de activos</span>
+            <span class="pill">Financial Flow multicompañía</span>
+            <span class="pill">Yield, ROI y cash flow</span>
+            <span class="pill">Riesgos y vencimientos</span>
+            <span class="pill">Snapshots históricos</span>
+            <span class="pill">Incidencias conectadas a contratos</span>
           </div>
         </div>
       </div>
