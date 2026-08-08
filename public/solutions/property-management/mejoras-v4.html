@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Version 4 | OneData Property Management</title>
+  <meta name="description" content="Descubre OneData Property Management Version 4: estructura jerárquica de activos, análisis financiero multicompañía e incidencias conectadas con contratos vigentes en Business Central." />
+  <style>
+    :root {
+      --ink:#102033; --muted:#5b6b7c; --line:#dbe4ec; --card:#fff;
+      --brand:#0067b8; --brand-deep:#004a86; --accent:#e6f2fb;
+      --navy:#082f4f; --surface:#f5f9fc; --green:#0f7b6c;
+      --shadow:0 18px 46px rgba(15,35,56,.1); --max:1180px;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif; line-height:1.6; background:#fff; }
+    a { color:inherit; text-decoration:none; }
+    .container { width:min(var(--max),calc(100% - 48px)); margin:0 auto; }
+    .topbar { position:sticky; top:0; z-index:20; border-bottom:1px solid rgba(219,228,236,.9); background:rgba(255,255,255,.94); backdrop-filter:blur(14px); }
+    .topbar-inner { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:700; }
+    .brand-mark { width:36px; height:36px; display:grid; place-items:center; border-radius:5px; color:#fff; background:var(--brand); font-weight:800; }
+    .back-link { padding:9px 13px; border:1px solid var(--line); border-radius:4px; background:#fff; font-weight:600; }
+    .hero { position:relative; overflow:hidden; padding:76px 0 66px; color:#fff; background:linear-gradient(120deg,#052b49 0%,#005da6 58%,#1384d1 100%); }
+    .hero::before { content:""; position:absolute; width:520px; height:520px; right:-210px; top:-300px; border:90px solid rgba(255,255,255,.07); border-radius:50%; }
+    .hero-grid { position:relative; display:grid; grid-template-columns:1.05fr .95fr; gap:42px; align-items:center; }
+    .eyebrow { display:inline-flex; align-items:center; gap:9px; font-size:.8rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; }
+    .eyebrow-dot { width:8px; height:8px; border-radius:50%; background:#8ed0ff; }
+    h1 { margin:17px 0; font-size:clamp(2.8rem,5.6vw,5.2rem); line-height:.99; letter-spacing:-.05em; font-weight:600; }
+    .hero-copy { margin:0; max-width:720px; color:rgba(255,255,255,.84); font-size:1.14rem; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; padding:12px 19px; border-radius:3px; font-weight:700; transition:transform .2s ease,background .2s ease; }
+    .btn:hover { transform:translateY(-2px); }
+    .btn-light { color:#004a86; background:#fff; }
+    .btn-ghost { color:#fff; border:1px solid rgba(255,255,255,.55); }
+    .hero-panel { padding:26px; border:1px solid rgba(255,255,255,.2); border-radius:12px; background:rgba(255,255,255,.09); backdrop-filter:blur(12px); }
+    .hero-panel small { color:#a9dafd; font-weight:700; text-transform:uppercase; letter-spacing:.08em; }
+    .hero-panel h2 { margin:10px 0 18px; font-size:1.7rem; line-height:1.15; }
+    .mini-flow { display:grid; gap:10px; }
+    .mini-step { display:grid; grid-template-columns:38px 1fr; gap:12px; align-items:center; padding:13px; border-radius:7px; background:rgba(255,255,255,.1); }
+    .mini-step span { width:38px; height:38px; display:grid; place-items:center; border-radius:50%; color:#063253; background:#fff; font-weight:800; }
+    .mini-step strong { display:block; }
+    .mini-step em { color:rgba(255,255,255,.72); font-size:.9rem; font-style:normal; }
+    .section { padding:72px 0; }
+    .section.soft { background:var(--surface); border-top:1px solid #e8eef4; border-bottom:1px solid #e8eef4; }
+    .section-head { max-width:800px; margin:0 auto 34px; text-align:center; }
+    .section-head.left { margin-left:0; text-align:left; }
+    .kicker { color:var(--brand); font-size:.8rem; font-weight:800; letter-spacing:.09em; text-transform:uppercase; }
+    .section-head h2 { margin:10px 0 12px; font-size:clamp(2rem,3.5vw,3.35rem); line-height:1.06; letter-spacing:-.035em; font-weight:600; }
+    .section-head p { margin:0; color:var(--muted); font-size:1.05rem; }
+    .value-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .value-card { padding:26px; border:1px solid var(--line); border-radius:10px; background:var(--card); box-shadow:0 7px 22px rgba(15,35,56,.05); }
+    .value-number { display:block; margin-bottom:14px; color:var(--brand); font-size:.8rem; font-weight:800; letter-spacing:.1em; }
+    .value-card h3 { margin:0 0 9px; font-size:1.35rem; }
+    .value-card p { margin:0; color:var(--muted); }
+    .feature-layout { display:grid; grid-template-columns:.9fr 1.1fr; gap:36px; align-items:center; }
+    .feature-layout.reverse { grid-template-columns:1.1fr .9fr; }
+    .feature-layout h2 { margin:10px 0 13px; font-size:clamp(2rem,3.2vw,3rem); line-height:1.08; letter-spacing:-.03em; font-weight:600; }
+    .lead { margin:0; color:var(--muted); font-size:1.05rem; }
+    .check-list { display:grid; gap:12px; margin:22px 0 0; padding:0; list-style:none; }
+    .check-list li { display:grid; grid-template-columns:24px 1fr; gap:10px; }
+    .check-list li::before { content:"✓"; width:22px; height:22px; display:grid; place-items:center; border-radius:50%; color:#fff; background:var(--green); font-size:.75rem; font-weight:900; }
+    .visual { min-height:390px; padding:25px; border:1px solid var(--line); border-radius:13px; background:#fff; box-shadow:var(--shadow); }
+    .visual-bar { display:flex; align-items:center; justify-content:space-between; gap:12px; padding-bottom:16px; border-bottom:1px solid var(--line); }
+    .visual-title strong { display:block; }
+    .visual-title span { color:var(--muted); font-size:.84rem; }
+    .visual-pill { padding:6px 9px; border-radius:999px; color:var(--brand); background:var(--accent); font-size:.74rem; font-weight:800; }
+    .tree { display:grid; gap:10px; margin-top:18px; }
+    .tree-row { display:grid; grid-template-columns:36px 1fr auto; gap:11px; align-items:center; padding:12px; border:1px solid #e5edf3; border-radius:7px; }
+    .tree-row.child { margin-left:27px; }
+    .tree-row.grandchild { margin-left:54px; }
+    .tree-icon { width:34px; height:34px; display:grid; place-items:center; border-radius:7px; color:var(--brand); background:#edf6fc; font-weight:800; }
+    .tree-row strong { display:block; font-size:.94rem; }
+    .tree-row small { color:var(--muted); }
+    .status { color:var(--green); font-size:.78rem; font-weight:700; }
+    .dashboard { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:16px; }
+    .metric { padding:15px; border:1px solid #e5edf3; border-radius:8px; background:#fbfdff; }
+    .metric small { color:var(--muted); }
+    .metric strong { display:block; margin-top:2px; font-size:1.55rem; }
+    .metric .good { color:var(--green); }
+    .metric .risk { color:#b45309; }
+    .bars { grid-column:1/-1; height:116px; display:flex; align-items:flex-end; gap:9px; padding:14px 12px 0; border:1px solid #e5edf3; border-radius:8px; background:linear-gradient(#fff,#f7fafc); }
+    .bar { flex:1; min-height:20px; border-radius:4px 4px 0 0; background:linear-gradient(#4aa3df,#0067b8); }
+    .incident { margin-top:18px; }
+    .field-row { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+    .field { padding:11px 12px; border:1px solid var(--line); border-radius:6px; }
+    .field label { display:block; color:var(--muted); font-size:.72rem; font-weight:700; text-transform:uppercase; }
+    .field span { font-size:.9rem; }
+    .notice { display:flex; gap:10px; margin-top:12px; padding:13px; border-left:4px solid var(--green); background:#eef9f6; color:#245e56; font-size:.9rem; }
+    .action-flow { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; margin-top:30px; }
+    .action-step { position:relative; padding:24px; border:1px solid var(--line); background:#fff; }
+    .action-step:not(:last-child)::after { content:"→"; position:absolute; z-index:2; right:-14px; top:50%; width:28px; height:28px; display:grid; place-items:center; transform:translateY(-50%); border-radius:50%; color:#fff; background:var(--brand); font-weight:800; }
+    .action-step strong { display:block; margin-bottom:7px; }
+    .action-step span { color:var(--muted); font-size:.92rem; }
+    .use-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .use-card { padding:25px; border:1px solid var(--line); border-radius:9px; background:#fff; }
+    .use-card h3 { margin:0 0 9px; }
+    .use-card p { margin:0; color:var(--muted); }
+    .precision { margin-top:24px; padding:22px; border-left:4px solid var(--brand); background:#eef6fc; color:#36566e; }
+    .cta { padding:0 0 72px; }
+    .cta-box { display:grid; grid-template-columns:1fr auto; gap:28px; align-items:center; padding:38px; border-radius:10px; color:#fff; background:var(--navy); }
+    .cta-box h2 { margin:0 0 8px; font-size:clamp(1.8rem,3vw,2.8rem); line-height:1.08; }
+    .cta-box p { margin:0; color:rgba(255,255,255,.76); }
+    footer { padding:0 0 42px; color:#6b7280; text-align:center; font-size:.9rem; }
+    @media (max-width:940px) {
+      .hero-grid,.feature-layout,.feature-layout.reverse { grid-template-columns:1fr; }
+      .value-grid,.use-grid { grid-template-columns:1fr; }
+      .action-flow { grid-template-columns:1fr 1fr; gap:12px; }
+      .action-step:not(:last-child)::after { display:none; }
+      .cta-box { grid-template-columns:1fr; }
+    }
+    @media (max-width:620px) {
+      .container { width:min(var(--max),calc(100% - 26px)); }
+      .hero { padding:54px 0 46px; }
+      .topbar-inner { min-height:62px; }
+      .brand span { font-size:.88rem; }
+      .back-link { padding:7px 9px; font-size:.84rem; }
+      .section { padding:54px 0; }
+      .visual { min-height:0; padding:18px; }
+      .dashboard,.field-row,.action-flow { grid-template-columns:1fr; }
+      .tree-row.child { margin-left:14px; }
+      .tree-row.grandchild { margin-left:28px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand"><div class="brand-mark">OF</div><span>OneData Property Management</span></div>
+      <a class="back-link" href="index.html">← Volver a la solución</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> Nueva evolución · Version 4</div>
+          <h1>Más control. Más claridad. Más acción.</h1>
+          <p class="hero-copy">OneData Property Management Version 4 incorpora estructura jerárquica de activos, análisis financiero consolidado e incidencias conectadas con contratos vigentes dentro de Microsoft Dynamics 365 Business Central.</p>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="#novedades">Ver novedades</a>
+            <a class="btn btn-ghost" href="index.html#contacto">Solicitar demo</a>
+          </div>
+        </div>
+        <aside class="hero-panel">
+          <small>De la cartera a la acción</small>
+          <h2>Tres planos conectados en un mismo flujo.</h2>
+          <div class="mini-flow">
+            <div class="mini-step"><span>1</span><div><strong>Estructure</strong><em>Propiedades, activos y subactivos.</em></div></div>
+            <div class="mini-step"><span>2</span><div><strong>Analice</strong><em>Rentabilidad, vencimientos y riesgo.</em></div></div>
+            <div class="mini-step"><span>3</span><div><strong>Actúe</strong><em>Incidencias con contexto contractual.</em></div></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="novedades">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Resumen ejecutivo</div>
+          <h2>Una nueva capa de control sobre la cartera inmobiliaria.</h2>
+          <p>La versión 4 mejora la representación de inmuebles complejos, consolida la lectura financiera entre empresas y convierte las desviaciones detectadas en tareas operativas trazables.</p>
+        </div>
+        <div class="value-grid">
+          <article class="value-card"><span class="value-number">01 · ACTIVOS</span><h3>Estructure mejor su cartera</h3><p>Organice propiedades, viviendas, habitaciones, parkings, trasteros y otros subactivos mediante una jerarquía real.</p></article>
+          <article class="value-card"><span class="value-number">02 · FINANZAS</span><h3>Analice mejor su rentabilidad</h3><p>Consolide contratos, rentas, valor de activo, previsiones e indicadores de riesgo en una única vista.</p></article>
+          <article class="value-card"><span class="value-number">03 · OPERACIÓN</span><h3>Actúe antes</h3><p>Vincule incidencias al contrato vigente y transforme diferencias de cobro en acciones con contexto completo.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="activos">
+      <div class="container feature-layout">
+        <div>
+          <div class="kicker">Asset Management</div>
+          <h2>Una estructura que refleja cómo es realmente cada propiedad.</h2>
+          <p class="lead">Sobre el maestro actual <code>Fixed Real Estate</code>, Version 4 añade clasificación por tipo de activo y relaciones padre-hijo para representar inmuebles complejos sin perder compatibilidad.</p>
+          <ul class="check-list">
+            <li>Vista unificada de propiedades, activos principales y subactivos.</li>
+            <li>Creación guiada de viviendas, habitaciones, parkings y trasteros.</li>
+            <li>Validación automática de ciclos, autorreferencias y propiedad raíz.</li>
+            <li>Acceso a la ficha clásica del inmueble desde la nueva estructura.</li>
+          </ul>
+        </div>
+        <div class="visual" aria-label="Representación visual de la jerarquía de activos">
+          <div class="visual-bar"><div class="visual-title"><strong>Estructura de activos</strong><span>Edificio Gran Vía</span></div><span class="visual-pill">5 unidades</span></div>
+          <div class="tree">
+            <div class="tree-row"><div class="tree-icon">P</div><div><strong>Edificio Gran Vía</strong><small>Propiedad raíz</small></div><span class="status">Activo</span></div>
+            <div class="tree-row child"><div class="tree-icon">V</div><div><strong>Vivienda 2º A</strong><small>Activo principal</small></div><span class="status">Ocupado</span></div>
+            <div class="tree-row grandchild"><div class="tree-icon">H</div><div><strong>Habitación 01</strong><small>Subactivo</small></div><span class="status">Ocupado</span></div>
+            <div class="tree-row grandchild"><div class="tree-icon">H</div><div><strong>Habitación 02</strong><small>Subactivo</small></div><span class="status">Disponible</span></div>
+            <div class="tree-row child"><div class="tree-icon">PK</div><div><strong>Parking P-14</strong><small>Activo principal</small></div><span class="status">Activo</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="financial-flow">
+      <div class="container feature-layout reverse">
+        <div class="visual" aria-label="Representación visual del mapa financiero">
+          <div class="visual-bar"><div class="visual-title"><strong>Financial Flow Map</strong><span>Cartera consolidada · Todas las empresas</span></div><span class="visual-pill">Actualizado</span></div>
+          <div class="dashboard">
+            <div class="metric"><small>Renta anual</small><strong>1,24 M€</strong></div>
+            <div class="metric"><small>Yield neto</small><strong class="good">5,8%</strong></div>
+            <div class="metric"><small>Previsión 12 meses</small><strong>1,18 M€</strong></div>
+            <div class="metric"><small>Contratos en riesgo</small><strong class="risk">7</strong></div>
+            <div class="bars" aria-hidden="true">
+              <div class="bar" style="height:42%"></div><div class="bar" style="height:57%"></div><div class="bar" style="height:51%"></div><div class="bar" style="height:68%"></div><div class="bar" style="height:74%"></div><div class="bar" style="height:86%"></div><div class="bar" style="height:79%"></div><div class="bar" style="height:94%"></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="kicker">Financial Flow</div>
+          <h2>Toda la cartera, en un único mapa financiero.</h2>
+          <p class="lead">Analice contratos y activos de varias empresas desde una vista consolidada. La configuración permite ajustar qué contratos incluir y los criterios económicos y de riesgo aplicables.</p>
+          <ul class="check-list">
+            <li>Renta normalizada, previsiones a 12, 24 y 60 meses e ingreso restante.</li>
+            <li>Yield bruto y neto, ROI, cap rate, plusvalía estimada y cash flow.</li>
+            <li>Alertas por vencimiento, deuda, concentración, garantías y rentabilidad.</li>
+            <li>Snapshots históricos, comparación, filtros y exportación a Excel.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="incidencias">
+      <div class="container feature-layout">
+        <div>
+          <div class="kicker">Incidencias conectadas</div>
+          <h2>El contrato correcto, con el contexto correcto.</h2>
+          <p class="lead">La incidencia parte del activo, localiza contratos vigentes en las empresas disponibles y completa automáticamente los datos necesarios para responder con rapidez.</p>
+          <ul class="check-list">
+            <li>Excluye contratos futuros, vencidos, cancelados, finalizados o cerrados.</li>
+            <li>Sincroniza contrato, cliente, contacto, teléfonos y correos.</li>
+            <li>Limpia el contexto contractual si cambia el activo.</li>
+            <li>Reduce errores manuales y mejora la trazabilidad con el arrendatario.</li>
+          </ul>
+        </div>
+        <div class="visual" aria-label="Representación visual de una incidencia conectada">
+          <div class="visual-bar"><div class="visual-title"><strong>Nueva incidencia</strong><span>INC-00482 · Diferencia de cobro</span></div><span class="visual-pill">En curso</span></div>
+          <div class="incident">
+            <div class="field-row">
+              <div class="field"><label>Activo</label><span>Vivienda 2º A</span></div>
+              <div class="field"><label>Contrato vigente</label><span>CONT-2026-0184</span></div>
+              <div class="field"><label>Cliente</label><span>Arrendatario seleccionado</span></div>
+              <div class="field"><label>Contacto</label><span>Datos sincronizados</span></div>
+              <div class="field"><label>Importe esperado</label><span>1.250,00 €</span></div>
+              <div class="field"><label>Diferencia</label><span>-250,00 €</span></div>
+            </div>
+            <div class="notice"><strong>✓</strong><span>Incidencia creada desde Financial Flow con activo, contrato y desviación económica ya contextualizados.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Punto diferencial</div>
+          <h2>Del análisis a la acción, sin perder contexto.</h2>
+          <p>Cuando Financial Flow detecta una diferencia de cobro, la solución permite iniciar el seguimiento operativo directamente desde la línea analizada.</p>
+        </div>
+        <div class="action-flow">
+          <div class="action-step"><strong>1. Detecte</strong><span>El mapa identifica una desviación o señal de riesgo.</span></div>
+          <div class="action-step"><strong>2. Contextualice</strong><span>Activo, contrato, cliente e importes viajan juntos.</span></div>
+          <div class="action-step"><strong>3. Cree</strong><span>La incidencia nace preparada para su gestión.</span></div>
+          <div class="action-step"><strong>4. Resuelva</strong><span>El equipo actúa con trazabilidad desde Business Central.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Casos de uso</div>
+          <h2>Diseñada para carteras con necesidades reales.</h2>
+        </div>
+        <div class="use-grid">
+          <article class="use-card"><h3>Family office o patrimonialista</h3><p>Consolide la cartera, localice rentabilidades por debajo del objetivo y compare su evolución mediante snapshots.</p></article>
+          <article class="use-card"><h3>Gestor de alquiler residencial</h3><p>Estructure viviendas y habitaciones, anticipe vencimientos y reduzca errores en la gestión de incidencias.</p></article>
+          <article class="use-card"><h3>Operador multicompañía</h3><p>Analice contratos de varias empresas sin romper la organización societaria existente en Business Central.</p></article>
+        </div>
+        <div class="precision"><strong>Alcance funcional:</strong> el análisis se carga bajo demanda y su calidad depende de los datos maestros y contractuales. La estructura se presenta mediante niveles indentados y mantiene la ficha clásica de <code>Fixed Real Estate</code> como detalle del inmueble.</div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <div><h2>Descubra Version 4 con su propia cartera como referencia.</h2><p>Oriente la demo a estructura de activos, consolidación financiera, riesgo o gestión operativa de incidencias.</p></div>
+          <div class="hero-actions"><a class="btn btn-light" href="index.html#contacto">Solicitar demo</a><a class="btn btn-ghost" href="#novedades">Volver arriba</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>© 2026 OneData · Property Management para Microsoft Dynamics 365 Business Central</footer>
+</body>
+</html>
