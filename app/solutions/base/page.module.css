@@ -1,0 +1,168 @@
+.page :is(a, summary, [tabindex]):focus-visible {
+  outline: 3px solid #0284c7;
+  outline-offset: 5px;
+}
+
+.page :is(section, main)[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+.skipLink {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 60;
+  transform: translateY(-200%);
+  border-radius: 0.75rem;
+  background: white;
+  color: #0f172a;
+  padding: 0.75rem 1rem;
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+}
+
+.eyebrow {
+  color: #0369a1;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border-radius: 1rem;
+  padding: 0.9rem 1.4rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.primaryButton {
+  background: #0369a1;
+  color: white;
+}
+
+.primaryButton:hover {
+  background: #075985;
+}
+
+.secondaryButton {
+  border: 1px solid #cbd5e1;
+  background: white;
+  color: #0f172a;
+}
+
+.secondaryButton:hover {
+  background: #f1f5f9;
+}
+
+.sectionNav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  overflow-x: auto;
+  border-block: 1px solid #e2e8f0;
+  background: white;
+}
+
+.sectionNav a {
+  flex-shrink: 0;
+  margin-block: 0.6rem;
+  border-radius: 0.75rem;
+  padding: 0.8rem 0.9rem;
+  color: #334155;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.sectionNav a:hover {
+  background: #f0f9ff;
+  color: #075985;
+}
+
+.section {
+  padding-block: 4.5rem;
+}
+
+.list {
+  margin-top: 1.25rem;
+  padding-left: 1.2rem;
+  list-style: disc;
+  color: #475569;
+  line-height: 1.9;
+}
+
+.list li + li {
+  margin-top: 0.75rem;
+}
+
+.tableScroll {
+  margin-top: 1.25rem;
+  overflow-x: auto;
+  border: 1px solid #cbd5e1;
+  border-radius: 1.25rem;
+  background: white;
+}
+
+.tableScroll table {
+  width: 100%;
+  min-width: 56rem;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+  line-height: 1.75;
+}
+
+.tableScroll caption {
+  padding: 1rem 1.25rem;
+  background: #f1f5f9;
+  color: #0f172a;
+  text-align: left;
+  font-weight: 600;
+}
+
+.tableScroll :is(th, td) {
+  padding: 1.25rem;
+  border-top: 1px solid #e2e8f0;
+  vertical-align: top;
+}
+
+.tableScroll thead th {
+  background: #f8fafc;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.tableScroll tbody th {
+  min-width: 8rem;
+  color: #0f172a;
+}
+
+.tableScroll td {
+  color: #475569;
+}
+
+.tableScroll tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.textLink {
+  color: #075985;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-block: 5rem;
+  }
+}
