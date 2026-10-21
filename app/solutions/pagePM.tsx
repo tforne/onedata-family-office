@@ -183,6 +183,12 @@ const staticLinks = [
     description: 'Landing complementaria con foco en gestion fiscal e integracion con Business Central.',
     label: 'Vista relacionada',
   },
+  {
+    title: 'OneData DeCA',
+    href: '/solutions/deca',
+    description: 'Gestión documental integrada en Microsoft Dynamics 365 Business Central, con arquitectura modular e integración con servicios documentales en Microsoft Azure.',
+    label: 'Vista relacionada',
+  },
 ];
 
 const sectionEyebrowClass =
@@ -329,6 +335,9 @@ export default function SolutionsPage() {
               <a href="#setup" className="rounded-full border border-transparent px-4 py-2 transition hover:border-slate-200 hover:bg-white hover:text-slate-950">
                 Puesta en marcha
               </a>
+              <Link href="/solutions/deca" className="rounded-full border border-transparent px-4 py-2 transition hover:border-slate-200 hover:bg-white hover:text-slate-950">
+                OneData DeCA
+              </Link>
             </nav>
           </div>
         </header>
