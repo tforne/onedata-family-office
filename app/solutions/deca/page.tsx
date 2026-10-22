@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../base/page.module.css';
+import decaStyles from './page.module.css';
 
 const title = 'OneData DeCA — Gestión documental integrada en Business Central';
 const description = 'OneData DeCA es una solución de gestión documental integrada en Microsoft Dynamics 365 Business Central que permite conectar los procesos empresariales con servicios documentales en Microsoft Azure, facilitando la gestión de documentos desde el propio entorno de trabajo.';
 const demoHref = 'mailto:contacto@onedata.one?subject=Demo%20OneData%20DeCA';
+const productSheetHref = '/WEB-DECA-02-Hoja-Producto/OneData_DeCA_Hoja_Producto.webp';
 
 export const metadata: Metadata = {
   title,
@@ -54,7 +57,7 @@ const deploymentSteps = [
 
 export default function DeCASolutionPage() {
   return (
-    <div className={`${styles.page} min-h-screen bg-slate-50 text-slate-950`}>
+    <div className={`${styles.page} ${decaStyles.page} min-h-screen bg-slate-50 text-slate-950`}>
       <a href="#contenido" className={styles.skipLink}>Saltar al contenido</a>
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-5 lg:px-8">
@@ -67,7 +70,7 @@ export default function DeCASolutionPage() {
       </header>
 
       <main id="contenido" tabIndex={-1}>
-        <section className="bg-white">
+        <section className={`${decaStyles.hero} bg-white`}>
           <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-[1.3fr_0.8fr] lg:items-center lg:px-8 lg:py-24">
             <div>
               <p className={styles.eyebrow}>OneData DeCA · Microsoft Dynamics 365 Business Central</p>
@@ -78,7 +81,7 @@ export default function DeCASolutionPage() {
                 <a href="#componentes" className={styles.secondaryButton}>Explorar componentes <span aria-hidden="true">↓</span></a>
               </div>
             </div>
-            <figure className="rounded-[32px] bg-slate-950 p-7 text-white shadow-soft sm:p-9">
+            <figure className={`${decaStyles.architecture} rounded-[32px] bg-slate-950 p-7 text-white shadow-soft sm:p-9`}>
               <figcaption className="text-sm font-semibold uppercase tracking-widest text-cyan-300">Arquitectura modular</figcaption>
               <div className="mt-7 space-y-5">
                 {extensions.map((extension, index) => (
@@ -110,7 +113,7 @@ export default function DeCASolutionPage() {
           <section id="caracteristicas" className={styles.section}>
             <p className={styles.eyebrow}>Gestión documental integrada</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Documentos y procesos en tu entorno de trabajo.</h2>
-            <ul className={`${styles.list} max-w-3xl`}>
+            <ul className={`${styles.list} ${decaStyles.capabilities} max-w-3xl`}>
               {capabilities.map(capability => <li key={capability}>{capability}</li>)}
             </ul>
           </section>
@@ -120,7 +123,7 @@ export default function DeCASolutionPage() {
             <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Una base común y conexión con Azure.</h2>
             <div className="mt-10 grid gap-6 lg:grid-cols-2">
               {extensions.map(extension => (
-                <article key={extension.title} className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
+                <article key={extension.title} className={`${decaStyles.extension} rounded-3xl border border-slate-200 bg-white p-7 shadow-sm`}>
                   <h3 className="text-2xl font-semibold">{extension.title}</h3>
                   <p className="mt-4 leading-7 text-slate-600">{extension.description}</p>
                   <ul className={styles.list}>
@@ -135,12 +138,36 @@ export default function DeCASolutionPage() {
             <p className={styles.eyebrow}>Componente de implantación</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">OneData DeCA Deployment Package</h2>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600">Conjunto de recursos y procedimientos de despliegue para preparar la infraestructura Azure y la configuración de cada cliente.</p>
-            <ul className={`${styles.list} max-w-3xl`}>
+            <ul className={`${styles.list} ${decaStyles.deployment} max-w-3xl`}>
               {deploymentSteps.map(step => <li key={step}>{step}</li>)}
             </ul>
           </section>
 
-          <section id="contacto" className="mb-16 rounded-[32px] bg-sky-800 p-7 text-white sm:p-12">
+          <section id="hoja-de-producto" aria-labelledby="hoja-de-producto-titulo" className={`${styles.section} ${decaStyles.sheet} border-t border-slate-200`}>
+            <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+              <div>
+                <p className={styles.eyebrow}>OneData DeCA</p>
+                <h2 id="hoja-de-producto-titulo" className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Hoja de producto</h2>
+                <a href={productSheetHref} target="_blank" rel="noopener noreferrer" className={`${styles.primaryButton} mt-8`}>
+                  Ver hoja de producto <span aria-hidden="true">↗</span>
+                  <span className="sr-only"> (se abre en una nueva pestaña)</span>
+                </a>
+              </div>
+              <a href={productSheetHref} target="_blank" rel="noopener noreferrer" aria-label="Abrir hoja de producto de OneData DeCA en una nueva pestaña" className={`${decaStyles.sheetPreview} block w-full max-w-3xl justify-self-center rounded-3xl border border-slate-200 bg-white p-2 shadow-sm sm:p-4`}>
+                <Image
+                  src={productSheetHref}
+                  alt="Hoja de producto de OneData DeCA: gestión documental integrada en Business Central, extensiones Core, Cloud Provider y Deployment Package, características y QR de acceso a la solución."
+                  width={1055}
+                  height={1491}
+                  sizes="(min-width: 1280px) 677px, (min-width: 1024px) 55vw, calc(100vw - 64px)"
+                  loading="lazy"
+                  className="h-auto w-full rounded-2xl"
+                />
+              </a>
+            </div>
+          </section>
+
+          <section id="contacto" className={`${decaStyles.contact} mb-16 rounded-[32px] bg-sky-800 p-7 text-white sm:p-12`}>
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-widest text-sky-100">Hablemos de tu gestión documental</p>
